@@ -9,6 +9,12 @@ This is not intended to be comprehensive nor are the commands explained meant to
 Please use the information here as a guideline to start from to begin understanding concepts.
 ////
 
+////
+ideas to add
+sed
+~
+////
+
 == Command Line Basics
 
 image::images/cli_basics_presentation-77967.png[scale=125]
@@ -151,6 +157,7 @@ a|* vi/vim
 |less |show the contents of a file at the cli
 |man |for learning how to use commands
 |chmod |for modifying file permissions
+|tar |for compressing and decompressing files
 |===
 
 == vi/vim commands
@@ -216,7 +223,22 @@ Displays the contents of a file in the terminal window.
 Use the up and down arrows to navigate the file.
 Use a forward slash followed by text to search for to find particular types. `/texttosearchfor`
 
-== Join commands on a single line
+== tar command
+
+'tar zxvf filename.tar.gz'
+
+Extracts the contents of the tar.gz file to the current directory.
+
+'tar zcvf newcompressedfile.tar.gz file1 file2 file3'
+
+Creates a new compressed file containing all the files indicated in the command.
+
+'tar zcvf newcompressedfile.tar.gz /path/to/files'
+
+Creates a new compressed file containing all the files in the indicated directory.
+
+
+== Pipe commands from one to another on a single line
 // I'm not sure if join is the right word here
 
 The pipe `|` symbol passes the output of a command to another command.
@@ -233,6 +255,7 @@ These are commands that are useful to know but fall into a niche category.
 * firewall-cmd - for configuring firewall rules
 * nmtui - for configuring network manager from the command line
 * git - version control for files
+* sed - Stream line editor to change file contents without opening a full editor
 
 == Bash files
 // list and describe various bash config files
@@ -255,4 +278,4 @@ Print Kernel messages -- `dmesg`
 * Vim Adventures https://vim-adventures.com (pay past level 3)
 * Command Line tutorial http://linuxcommand.org/lc3_learning_the_shell.php
 * Command Line Magic https://twitter.com/climagic
-*
+* Explains the entered command based on the man page http://explainshell.com/
