@@ -11,7 +11,8 @@ Please use the information here as a guideline to start from to begin understand
 
 ////
 ideas to add
-sed
+cp (-R)
+mv
 ~
 ////
 
@@ -150,6 +151,8 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 a|* vi/vim
 * emacs
 * pico/nano |For editing files
+|cp |for copying files
+|mv |for moving/renaming files
 |find |for finding files
 |grep |for finding stuff in files
 |tail/head |for viewing end/beginning of files
@@ -169,6 +172,26 @@ a|* vi/vim
 `esc` - return to command mode
 `:wq` - write/save the file and quit the editor
 `:q!` - quit the editor without saving the changes
+
+== cp command
+
+'cp filename /path/to/copy/to'
+
+'cp filename newfilename'
+
+copies the file from the current location/name to the new location/name.
+
+'cp -R /path/to/directory /path/to/new/directory'
+
+copies the the files and directories from the specified directrory to the new location
+
+== mv command
+
+'mv filename /path/to/new/location'
+
+'mv filename newfilename'
+
+moves the file from the current location/name to the new location/name.
 
 == find command
 
@@ -257,7 +280,19 @@ These are commands that are useful to know but fall into a niche category.
 * git - version control for files
 * sed - Stream line editor to change file contents without opening a full editor
 
-== Bash files
+== Dangerous commands
+
+These commands should not be used unless you really understand what you're doing with them.
+
+'rm -rf /' - Will delete the entire file system
+'mv file /dev/null'
+':(){:|:&};:' - a fork bomb which creates a function and exectues twice until the system freezes
+'$COMMAND > /dev/sda' - overwrites data on the block device, in this case the main drive
+'mkfs.* /dev/sda' - formats the block device, in this case the main drive
+
+For more, search for 'dangerous linux commands' in your favorite search engine
+
+== Bash system files
 // list and describe various bash config files
 
 `.bashrc` - configuration file for non-login shells
