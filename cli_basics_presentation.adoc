@@ -65,7 +65,7 @@ The most common general purpose ones are, in no particular order:
 == Basic Navigation
 
 * CasE SensItiVity MatTERs
-* tab completion
+* tab completion to complete command names, paths, or files
 * `pwd` (Print working[current] directory)
 * `ls` (list files in directory)
 * `cd` (Change Directory)
