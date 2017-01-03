@@ -69,6 +69,10 @@ The most common general purpose ones are, in no particular order:
 * `pwd` (Print working[current] directory)
 * `ls` (list files in directory)
 * `cd` (Change Directory)
+** 'cd /path/to/directory' changes from the current directory to the defined directory
+** 'cd ~' changes from the current directory to the user's home directory
+** 'cd ..' changes from the current directory to the directory one level up
+** 'cd ../../path/to/directory' changes from the current directory to two levels up then down to the new directory
 
 == Permissions
 
@@ -327,6 +331,6 @@ Print Kernel messages -- `dmesg`
 * Vim Adventures https://vim-adventures.com (pay past level 3)
 * Command Line tutorial http://linuxcommand.org/lc3_learning_the_shell.php
 * Command Line Magic https://twitter.com/climagic
-* Explains the entered command based on the man page http://explainshell.com/
+* Explains the entered command based on the man page http://explainshell.com
 * Test your regex expressions http://regex101.com
 * Practice your knowledge of regex http://regexcrossword.com
