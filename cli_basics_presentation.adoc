@@ -83,6 +83,7 @@ total 40
 drwxr-xr-x   6 chuck  staff   204B May 25  2016 .
 drwxr-xr-x  16 chuck  staff   544B Oct 24 21:25 ..
 drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
+-rw-r--r--   1 chuck  staff   6.0K May 25  2016 .coffee
 -rw-r--r--   1 chuck  staff   2.8K May 25  2016 image-factory-spec.coffee
 -rw-r--r--   1 chuck  staff   6.0K May 25  2016 main-spec.coffee
 -rw-r--r--   1 chuck  staff   7.5K May 25  2016 main-url-support-spec.coffee
@@ -280,7 +281,7 @@ The `grep` command then passes on only the lines of text that contain the word `
 
 `less filename.txt| grep address > addresses.txt`
 
-== Other interesting commands to follow up on
+== Other interesting commands and concepts to follow up on
 
 These are commands that are useful to know but fall into a niche category.
 
@@ -289,6 +290,8 @@ These are commands that are useful to know but fall into a niche category.
 * nmtui - for configuring network manager from the command line
 * git - version control for files
 * sed - Stream line editor to change file contents without opening a full editor
+* environmental variables - easily share configuration settings between applications and processes such as $USER, $HOME, $EDITOR, $BROWSER
+* '^n' reads as ctrl-n
 
 == Dangerous commands
 
