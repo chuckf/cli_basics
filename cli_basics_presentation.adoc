@@ -103,9 +103,9 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 
 <<<<
 
-[cols=2]
+[cols=1*^,frame=none,grid=none]
 |===
-|`drwxr-xr-x`
+|drwxr-xr-x
 |TUUUGGGOOO
 |===
 
@@ -121,6 +121,8 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 |G |Group Permissions
 |O |Other User's permissions
 |===
+
+<<<<
 
 `rwx`
 
@@ -153,6 +155,7 @@ a|* vi/vim
 * pico/nano |For editing files
 |cp |for copying files
 |mv |for moving/renaming files
+|rm |for removing/deleting files or directories
 |find |for finding files
 |grep |for finding stuff in files
 |tail/head |for viewing end/beginning of files
@@ -192,6 +195,16 @@ copies the the files and directories from the specified directrory to the new lo
 'mv filename newfilename'
 
 moves the file from the current location/name to the new location/name.
+
+== rm command
+
+`rm filename`
+
+deletes the indicated file
+
+`rm -rf directoryname`
+
+deletes the indicated directory and all of its contents, including hidden files
 
 == find command
 
