@@ -307,6 +307,18 @@ The `grep` command then passes on only the lines of text that contain the word `
 
 `less filename.txt| grep address > addresses.txt`
 
+== Command Line Switches
+
+Commands are often followed by one or more switches at the command line.
+When one `-` is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.
+
+`ls -help` attempts to run the `ls` command with the h,l,p options (e is invalid)
+
+`ls --help` prints the `ls` help file to the screen
+
+WARNING: In some fonts, a `--` notation will appear as a single `-` when rendered.
+
 == Other interesting commands and concepts to follow up on
 
 These are commands that are useful to know but fall into a niche category.
