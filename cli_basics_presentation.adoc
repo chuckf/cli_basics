@@ -19,7 +19,7 @@ mv
 
 == Command Line Basics
 
-image::images/cli_basics_presentation-77967.png[]
+image::images/cli_basics_presentation-77967-resized.png[http://www.commitstrip.com/en/2016/12/22/terminal-forever/]
 
 == Different Distros
 // I don't think this is really needed here
