@@ -14,17 +14,24 @@ Please use the information here as a guideline to start from to begin understand
 
 image::images/cli_basics_presentation-77967-resized.png[http://www.commitstrip.com/en/2016/12/22/terminal-forever/]
 
-== Different Distros
+== Different *nixes
 // I don't think this is really needed here
 
-There are many different Linux distributions.
-The most common ones are, in no particular order:
+There are many different *nix versions and cousins.
+The flavors include *BSD, Linux, Unix, and others.
+Each version and implementation has some unique features to their shells.
+Some popular versions and distributions are:
 
 * Red Hat/CentOS
 * Fedora
 * Ubuntu
 * SUSE
 * Debian
+* Solaris
+* FreeBSD
+* MacOS/OS X
+* AIX
+* OpenBSD
 
 == File structure
 
