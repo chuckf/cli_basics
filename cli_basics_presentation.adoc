@@ -42,7 +42,7 @@ Some popular versions and distributions are:
 *** This is not the root(`/`) of the file system
 ** `/home/$USER` (Your files)
 ** `/etc` (System configuration files)
-** `/media` (Mount points for removeable systems)
+** `/media` (Mount points for removeable systems, primarily linux flavors)
 ** `/opt` (Typically software packages installed in one place)
 // Need to reword the opt dir description
 ** `/var` (Variable files that change regularly)
@@ -74,6 +74,7 @@ Some popular versions and distributions are:
 ** `cd ~` changes from the current directory to the user's home directory
 ** `cd ..` changes from the current directory to the directory one level up
 ** `cd ../../path/to/directory` changes from the current directory to two levels up then down to the new directory
+** `cd -` changes from the current directory to the previous directory
 
 == Permissions
 
