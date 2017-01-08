@@ -760,6 +760,14 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 <td class="tableblock halign-left valign-top"><p class="tableblock">For editing files</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for copying files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for moving/renaming files</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">for finding files</p></td>
 </tr>
@@ -787,6 +795,10 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 <td class="tableblock halign-left valign-top"><p class="tableblock">chmod</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">for modifying file permissions</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for compressing and decompressing files</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -795,13 +807,59 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 <h2 id="_vi_vim_commands">vi/vim commands</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>vim filename</code> - opens the designated file in normal mode
-<code>:help</code> - displays the vim help file
-<code>/texttosearch</code> - search for text in the document (case sensitive)
-<code>i</code> - insert mode to edit the file
-<code>esc</code> - return to command mode
-<code>:wq</code> - write/save the file and quit the editor
-<code>:q!</code> - quit the editor without saving the changes</p>
+<p><code>vim filename</code> - opens the designated file in normal mode</p>
+</div>
+<div class="paragraph">
+<p><code>:help</code> - displays the vim help file</p>
+</div>
+<div class="paragraph">
+<p><code>/texttosearch</code> - search for text in the document (case sensitive)</p>
+</div>
+<div class="paragraph">
+<p><code>i</code> - insert mode to edit the file</p>
+</div>
+<div class="paragraph">
+<p><code>esc</code> - return to command mode</p>
+</div>
+<div class="paragraph">
+<p><code>:wq</code> - write/save the file and quit the editor</p>
+</div>
+<div class="paragraph">
+<p><code>:q!</code> - quit the editor without saving the changes</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cp_command">cp command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>'cp filename /path/to/copy/to'</p>
+</div>
+<div class="paragraph">
+<p>'cp filename newfilename'</p>
+</div>
+<div class="paragraph">
+<p>copies the file from the current location/name to the new location/name.</p>
+</div>
+<div class="paragraph">
+<p>'cp -R /path/to/directory /path/to/new/directory'</p>
+</div>
+<div class="paragraph">
+<p>copies the the files and directories from the specified directrory to the new location</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mv_command">mv command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>'mv filename /path/to/new/location'</p>
+</div>
+<div class="paragraph">
+<p>'mv filename newfilename'</p>
+</div>
+<div class="paragraph">
+<p>moves the file from the current location/name to the new location/name.</p>
 </div>
 </div>
 </div>
@@ -895,7 +953,30 @@ Use a forward slash followed by text to search for to find particular types. <co
 </div>
 </div>
 <div class="sect1">
-<h2 id="_join_commands_on_a_single_line">Join commands on a single line</h2>
+<h2 id="_tar_command">tar command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>'tar zxvf filename.tar.gz'</p>
+</div>
+<div class="paragraph">
+<p>Extracts the contents of the tar.gz file to the current directory.</p>
+</div>
+<div class="paragraph">
+<p>'tar zcvf newcompressedfile.tar.gz file1 file2 file3'</p>
+</div>
+<div class="paragraph">
+<p>Creates a new compressed file containing all the files indicated in the command.</p>
+</div>
+<div class="paragraph">
+<p>'tar zcvf newcompressedfile.tar.gz /path/to/files'</p>
+</div>
+<div class="paragraph">
+<p>Creates a new compressed file containing all the files in the indicated directory.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pipe_commands_from_one_to_another_on_a_single_line">Pipe commands from one to another on a single line</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The pipe <code>|</code> symbol passes the output of a command to another command.
@@ -927,17 +1008,50 @@ The <code>grep</code> command then passes on only the lines of text that contain
 <li>
 <p>git - version control for files</p>
 </li>
+<li>
+<p>sed - Stream line editor to change file contents without opening a full editor</p>
+</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bash_files">Bash files</h2>
+<h2 id="_dangerous_commands">Dangerous commands</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code>.bashrc</code> - configuration file for non-login shells
-<code>.bash_profile</code> - configuration for login shells
-<code>.bash_history</code> - history of the recent commands run in the bash shell</p>
+<p>These commands should not be used unless you really understand what you&#8217;re doing with them.</p>
+</div>
+<div class="paragraph">
+<p>'rm -rf /' - Will delete the entire file system</p>
+</div>
+<div class="paragraph">
+<p>'mv file /dev/null'</p>
+</div>
+<div class="paragraph">
+<p>':(){:|:&amp;};:' - a fork bomb which creates a function and exectues twice until the system freezes</p>
+</div>
+<div class="paragraph">
+<p>'$COMMAND &gt; /dev/sda' - overwrites data on the block device, in this case the main drive</p>
+</div>
+<div class="paragraph">
+<p>'mkfs.* /dev/sda' - formats the block device, in this case the main drive</p>
+</div>
+<div class="paragraph">
+<p>For more, search for 'dangerous linux commands' in your favorite search engine</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bash_system_files">Bash system files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>.bashrc</code> - configuration file for non-login shells</p>
+</div>
+<div class="paragraph">
+<p><code>.bash_profile</code> - configuration for login shells</p>
+</div>
+<div class="paragraph">
+<p><code>.bash_history</code> - history of the recent commands run in the bash shell</p>
 </div>
 </div>
 </div>
@@ -948,9 +1062,13 @@ The <code>grep</code> command then passes on only the lines of text that contain
 <p>log files are your friend</p>
 </div>
 <div class="paragraph">
-<p>Common Location&#8201;&#8212;&#8201;/var/log
-Read recent system messages&#8201;&#8212;&#8201;<code>tail /var/log/messages</code>
-Print Kernel messages&#8201;&#8212;&#8201;<code>dmesg</code></p>
+<p>Common Location&#8201;&#8212;&#8201;/var/log</p>
+</div>
+<div class="paragraph">
+<p>Read recent system messages&#8201;&#8212;&#8201;<code>tail /var/log/messages</code></p>
+</div>
+<div class="paragraph">
+<p>Print Kernel messages&#8201;&#8212;&#8201;<code>dmesg</code></p>
 </div>
 </div>
 </div>
@@ -969,8 +1087,16 @@ Print Kernel messages&#8201;&#8212;&#8201;<code>dmesg</code></p>
 <p>Command Line tutorial <a href="http://linuxcommand.org/lc3_learning_the_shell.php" class="bare">http://linuxcommand.org/lc3_learning_the_shell.php</a></p>
 </li>
 <li>
-<p>Command Line Magic <a href="https://twitter.com/climagic" class="bare">https://twitter.com/climagic</a>
-*</p>
+<p>Command Line Magic <a href="https://twitter.com/climagic" class="bare">https://twitter.com/climagic</a></p>
+</li>
+<li>
+<p>Explains the entered command based on the man page <a href="http://explainshell.com/" class="bare">http://explainshell.com/</a></p>
+</li>
+<li>
+<p>Test your regex expressions <a href="http://regex101.com" class="bare">http://regex101.com</a></p>
+</li>
+<li>
+<p>Practice your knowledge of regex <a href="http://regexcrossword.com" class="bare">http://regexcrossword.com</a></p>
 </li>
 </ul>
 </div>
@@ -979,7 +1105,7 @@ Print Kernel messages&#8201;&#8212;&#8201;<code>dmesg</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-28 17:19:35 EST
+Last updated 2017-01-03 09:51:01 EST
 </div>
 </div>
 </body>

@@ -66,10 +66,14 @@ The most common general purpose ones are, in no particular order:
 == Basic Navigation
 
 * CasE SensItiVity MatTERs
-* tab completion
+* tab completion to complete command names, paths, or files
 * `pwd` (Print working[current] directory)
 * `ls` (list files in directory)
 * `cd` (Change Directory)
+** 'cd /path/to/directory' changes from the current directory to the defined directory
+** 'cd ~' changes from the current directory to the user's home directory
+** 'cd ..' changes from the current directory to the directory one level up
+** 'cd ../../path/to/directory' changes from the current directory to two levels up then down to the new directory
 
 == Permissions
 
@@ -80,21 +84,22 @@ total 40
 drwxr-xr-x   6 chuck  staff   204B May 25  2016 .
 drwxr-xr-x  16 chuck  staff   544B Oct 24 21:25 ..
 drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
+-rw-r--r--   1 chuck  staff   6.0K May 25  2016 .coffee
 -rw-r--r--   1 chuck  staff   2.8K May 25  2016 image-factory-spec.coffee
 -rw-r--r--   1 chuck  staff   6.0K May 25  2016 main-spec.coffee
 -rw-r--r--   1 chuck  staff   7.5K May 25  2016 main-url-support-spec.coffee
 
-----------   -  -------  -------  -------- ------------ -------------
-    |        |     |        |         |         |             |
-    |        |     |        |         |         |         File Name
-    |        |     |        |         |         |
-    |        |     |        |         |         +---  Modification Time
-    |        |     |        |         |
-    |        |     |        |         +-------------   Size (in bytes)
-    |        |     |        |
-    |        |     |        +-----------------------        Group
-    |        |     |
-    |        |     +--------------------------------        Owner
+----------   - -----  -----   ---- ------------ ----------------------------
+    |        |   |      |       |       |             |
+    |        |   |      |       |       |             +    File Name
+    |        |   |      |       |       |
+    |        |   |      |       |       +-----------  Modification Time
+    |        |   |      |       |
+    |        |   |      |       +-------------------   Size (in bytes)
+    |        |   |      |
+    |        |   |      +---------------------------        Group
+    |        |   |
+    |        |   +----------------------------------        Owner
     |        |
     |        +--------------------------------------        Links
     |
@@ -171,11 +176,17 @@ a|* vi/vim
 == vi/vim commands
 
 `vim filename` - opens the designated file in normal mode
+
 `:help` - displays the vim help file
+
 `/texttosearch` - search for text in the document (case sensitive)
+
 `i` - insert mode to edit the file
+
 `esc` - return to command mode
+
 `:wq` - write/save the file and quit the editor
+
 `:q!` - quit the editor without saving the changes
 
 == cp command
@@ -285,7 +296,7 @@ The `grep` command then passes on only the lines of text that contain the word `
 
 `less filename.txt| grep address > addresses.txt`
 
-== Other interesting commands to follow up on
+== Other interesting commands and concepts to follow up on
 
 These are commands that are useful to know but fall into a niche category.
 
@@ -294,15 +305,21 @@ These are commands that are useful to know but fall into a niche category.
 * nmtui - for configuring network manager from the command line
 * git - version control for files
 * sed - Stream line editor to change file contents without opening a full editor
+* environmental variables - easily share configuration settings between applications and processes such as $USER, $HOME, $EDITOR, $BROWSER
+* '^n' reads as ctrl-n
 
 == Dangerous commands
 
 These commands should not be used unless you really understand what you're doing with them.
 
 'rm -rf /' - Will delete the entire file system
+
 'mv file /dev/null'
+
 ':(){:|:&};:' - a fork bomb which creates a function and exectues twice until the system freezes
+
 '$COMMAND > /dev/sda' - overwrites data on the block device, in this case the main drive
+
 'mkfs.* /dev/sda' - formats the block device, in this case the main drive
 
 For more, search for 'dangerous linux commands' in your favorite search engine
@@ -311,7 +328,9 @@ For more, search for 'dangerous linux commands' in your favorite search engine
 // list and describe various bash config files
 
 `.bashrc` - configuration file for non-login shells
+
 `.bash_profile` - configuration for login shells
+
 `.bash_history` - history of the recent commands run in the bash shell
 
 == Troubleshooting
@@ -319,7 +338,9 @@ For more, search for 'dangerous linux commands' in your favorite search engine
 log files are your friend
 
 Common Location -- /var/log
+
 Read recent system messages -- `tail /var/log/messages`
+
 Print Kernel messages -- `dmesg`
 
 == Resources
@@ -328,4 +349,6 @@ Print Kernel messages -- `dmesg`
 * Vim Adventures https://vim-adventures.com (pay past level 3)
 * Command Line tutorial http://linuxcommand.org/lc3_learning_the_shell.php
 * Command Line Magic https://twitter.com/climagic
-* Explains the entered command based on the man page http://explainshell.com/
+* Explains the entered command based on the man page http://explainshell.com
+* Test your regex expressions http://regex101.com
+* Practice your knowledge of regex http://regexcrossword.com
