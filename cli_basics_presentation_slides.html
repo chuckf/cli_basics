@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=" http-equiv="Content-Type">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="Asciidoctor 1.5.5" name="generator">
+<meta content="Chuck Frain" name="author">
+<title>Command Line Basics</title>
+<link href="deck.js/core/deck.core.css" rel="stylesheet">
+<link href="deck.js/extensions/scale/deck.scale.css" media="screen" rel="stylesheet">
+<link href="deck.js/extensions/navigation/deck.navigation.css" media="screen" rel="stylesheet">
+<link href="deck.js/extensions/toc/deck.toc.css" media="screen" rel="stylesheet">
+<link href="deck.js/themes/style/web-2.0.css" media="screen" rel="stylesheet">
+<link href="deck.js/themes/transition/fade.css" media="screen" rel="stylesheet">
+<link href="deck.js/core/print.css" media="print" rel="stylesheet">
+<script src="deck.js/modernizr.custom.js"></script>
+</head>
+<body class="article">
+<div class="deck-container">
+<section class="slide" id="title-slide">
+<h1>Command Line Basics</h1>
+<span id="author">Chuck Frain</span>
+<br>
+</section>
+<section class="slide" id="_command_line_basics">
+<h2>Command Line Basics</h2>
+<div class="imageblock">
+<div class="content">
+<img alt="http://www.commitstrip.com/en/2016/12/22/terminal-forever/" src="images/cli_basics_presentation-77967-resized.png">
+</div>
+</div>
+</section>
+<section class="slide" id="_different_nixes">
+<h2>Different *nixes</h2>
+<div class="paragraph"><p>There are many different *nix versions and cousins.
+The flavors include *BSD, Linux, Unix, and others.
+Each version and implementation has some unique features to their shells.
+Some popular versions and distributions are:</p></div>
+<div class="ulist">
+<ul>
+<li>Red Hat/CentOS</li>
+<li>Fedora</li>
+<li>Ubuntu</li>
+<li>SUSE</li>
+<li>Debian</li>
+<li>Solaris</li>
+<li>FreeBSD</li>
+<li>MacOS/OS X</li>
+<li>AIX</li>
+<li>OpenBSD</li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_file_structure">
+<h2>File structure</h2>
+<div class="ulist">
+<ul>
+<li>File locations differ between distributions</li>
+<li><p>
+Common directories<div class="ulist">
+<ul>
+<li><code>/</code> (Root of the file system)</li>
+<li><p>
+<code>/root</code> (root user&#8217;s home directory)<div class="ulist">
+<ul>
+<li>This is not the root(<code>/</code>) of the file system</li>
+</ul>
+</div></p></li>
+<li><code>/home/$USER</code> (Your files)</li>
+<li><code>/etc</code> (System configuration files)</li>
+<li><code>/media</code> (Mount points for removeable systems, primarily linux flavors)</li>
+<li><code>/opt</code> (Typically software packages installed in one place)</li>
+<li><code>/var</code> (Variable files that change regularly)</li>
+<li><code>/var/log</code> (Common default location for log files)</li>
+</ul>
+</div></p></li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_cli_installers">
+<h2>CLI installers</h2>
+<div class="paragraph"><p><code>yum install &lt;package&gt;</code></p></div>
+<div class="paragraph"><p><code>apt-get install &lt;package&gt;</code></p></div>
+<div class="ulist">
+<ul>
+<li><p>
+<code>yum</code>/<code>dnf</code><div class="ulist">
+<ul>
+<li>Red Hat</li>
+<li>CentOS</li>
+<li>Fedora</li>
+<li>SUSE</li>
+</ul>
+</div></p></li>
+<li><p>
+<code>apt-get</code><div class="ulist">
+<ul>
+<li>Debian</li>
+<li>Ubuntu</li>
+</ul>
+</div></p></li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_basic_navigation">
+<h2>Basic Navigation</h2>
+<div class="ulist">
+<ul>
+<li>CasE SensItiVity MatTERs</li>
+<li>tab completion to complete command names, paths, or files</li>
+<li><code>pwd</code> (Print working[current] directory)</li>
+<li><code>ls</code> (list files in directory)</li>
+<li><p>
+<code>cd</code> (Change Directory)<div class="ulist">
+<ul>
+<li><code>cd /path/to/directory</code> changes from the current directory to the defined directory</li>
+<li><code>cd ~</code> changes from the current directory to the user&#8217;s home directory</li>
+<li><code>cd ..</code> changes from the current directory to the directory one level up</li>
+<li><code>cd ../../path/to/directory</code> changes from the current directory to two levels up then down to the new directory</li>
+<li><code>cd -</code> changes from the current directory to the previous directory</li>
+</ul>
+</div></p></li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_permissions">
+<h2>Permissions</h2>
+<div class="paragraph"><p>The following is the output of <code>ls -lah</code> (long list,all files,human readable)</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>total 40
+drwxr-xr-x   6 chuck  staff   204B May 25  2016 .
+drwxr-xr-x  16 chuck  staff   544B Oct 24 21:25 ..
+drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
+-rw-r--r--   1 chuck  staff   6.0K May 25  2016 .coffee
+-rw-r--r--   1 chuck  staff   2.8K May 25  2016 image-factory-spec.coffee
+-rw-r--r--   1 chuck  staff   6.0K May 25  2016 main-spec.coffee
+-rw-r--r--   1 chuck  staff   7.5K May 25  2016 main-url-support-spec.coffee
+
+----------   - -----  -----   ---- ------------ ----------------------------
+    |        |   |      |       |       |             |
+    |        |   |      |       |       |             +    File Name
+    |        |   |      |       |       |
+    |        |   |      |       |       +-----------  Modification Time
+    |        |   |      |       |
+    |        |   |      |       +-------------------   Size (in bytes)
+    |        |   |      |
+    |        |   |      +---------------------------        Group
+    |        |   |
+    |        |   +----------------------------------        Owner
+    |        |
+    |        +--------------------------------------        Links
+    |
+    +-----------------------------------------------   File Permissions</code></pre>
+</div>
+</div>
+<div class="paragraph"><p>(Diagram from linuxcommand.org)</p></div>
+<div style="page-break-after: always"></div>
+<table class="tableblock frame-none grid-none" style="width:100%">
+<colgroup>
+<col style="width:100%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">drwxr-xr-x</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">TUUUGGGOOO</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-topbot grid-all" style="width:100%">
+<colgroup>
+<col style="width:50%">
+<col style="width:50%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph"><p>File Type</p></div>
+<div class="ulist">
+<ul>
+<li><code>-</code> file</li>
+<li><code>d</code> directory</li>
+<li><code>l</code> symlink</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User/Owner Permissions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Group Permissions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other User&#8217;s permissions</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always"></div>
+<div class="paragraph"><p><code>rwx</code></p></div>
+<table class="tableblock frame-all grid-all" style="width:100%">
+<colgroup>
+<col style="width:33.3333%">
+<col style="width:33.3333%">
+<col style="width:33.3334%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Character</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+<th class="tableblock halign-left valign-top">Numerical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">execute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph"><p><code>chmod</code> changes the permissions of the file or directory</p></div>
+<div class="paragraph"><p><code>chmod 644 filename</code> = -rw-r&#8212;&#8203;r-- permissions to the file</p></div>
+<div class="paragraph"><p><code>chmod 775 filename</code> = -rwxrwxrw- permissions to the file</p></div>
+<div class="paragraph"><p><code>chmod 654 dirname</code> = drw-r-xr-- permissions to the file</p></div>
+</section>
+<section class="slide" id="_useful_commands">
+<h2>Useful Commands</h2>
+<table class="tableblock frame-all grid-all" style="width:100%">
+<colgroup>
+<col style="width:50%">
+<col style="width:50%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>vi/vim</li>
+<li>emacs</li>
+<li>pico/nano</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For editing files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for copying files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for moving/renaming files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for removing/deleting files or directories</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for finding files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grep</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for finding stuff in files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tail/head</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for viewing end/beginning of files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">service/systemctl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for starting/stoping/controlling services</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">less</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show the contents of a file at the cli</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">man</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for learning how to use commands</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chmod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for modifying file permissions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for compressing and decompressing files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sudo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for running a command as a different user, typically root</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide" id="_vi_vim_commands">
+<h2>vi/vim commands</h2>
+<div class="paragraph"><p><code>vim filename</code> - opens the designated file in normal mode</p></div>
+<div class="paragraph"><p><code>:help</code> - displays the vim help file</p></div>
+<div class="paragraph"><p><code>/texttosearch</code> - search for text in the document (case sensitive)</p></div>
+<div class="paragraph"><p><code>i</code> - insert mode to edit the file</p></div>
+<div class="paragraph"><p><code>esc</code> - return to command mode</p></div>
+<div class="paragraph"><p><code>:wq</code> - write/save the file and quit the editor</p></div>
+<div class="paragraph"><p><code>:q!</code> - quit the editor without saving the changes</p></div>
+</section>
+<section class="slide" id="_cp_command">
+<h2>cp command</h2>
+<div class="paragraph"><p><code>cp filename /path/to/copy/to</code></p></div>
+<div class="paragraph"><p><code>cp filename newfilename</code></p></div>
+<div class="paragraph"><p>copies the file from the current location/name to the new location/name</p></div>
+<div class="paragraph"><p><code>cp -R /path/to/directory /path/to/new/directory</code></p></div>
+<div class="paragraph"><p>copies the the files and directories from the specified directrory to the new location</p></div>
+</section>
+<section class="slide" id="_mv_command">
+<h2>mv command</h2>
+<div class="paragraph"><p><code>mv filename /path/to/new/location</code></p></div>
+<div class="paragraph"><p><code>mv filename newfilename</code></p></div>
+<div class="paragraph"><p>moves the file from the current location/name to the new location/name.</p></div>
+</section>
+<section class="slide" id="_rm_command">
+<h2>rm command</h2>
+<div class="paragraph"><p><code>rm filename</code></p></div>
+<div class="paragraph"><p>removes(deletes) the indicated file</p></div>
+<div class="paragraph"><p><code>rm -rf directoryname</code></p></div>
+<div class="paragraph"><p>removes(deletes) the indicated directory and all of its contents, including hidden files</p></div>
+</section>
+<section class="slide" id="_find_command">
+<h2>find command</h2>
+<div class="paragraph"><p><code>find . -name 'filename.txt'</code></p></div>
+<div class="paragraph"><p>Searches for the filename.txt file in the current directory and sub directories</p></div>
+<div class="paragraph"><p>Other popular factors to search on include owner, time, type, size, file types</p></div>
+</section>
+<section class="slide" id="_grep_command">
+<h2>grep command</h2>
+<div class="paragraph"><p><code>grep -iR pattern Documents/</code></p></div>
+<div class="paragraph"><p>Searches files for the phrase <code>pattern</code> in a case insensitive(i) manner in and below(R) the local <code>Documents</code> directory.</p></div>
+</section>
+<section class="slide" id="_head_tail_commands">
+<h2>head/tail commands</h2>
+<div class="paragraph"><p><code>head -n 15 filename.txt</code></p></div>
+<div class="paragraph"><p><code>head</code> displays the first lines of a file (10 by default, 15 in the above example)</p></div>
+<div class="paragraph"><p><code>tail -n 15 filename.txt</code></p></div>
+<div class="paragraph"><p><code>tail</code> displays the last lines of a file (10 by default, 15 in the above example)</p></div>
+<div class="paragraph"><p><code>tail -f filename.txt</code></p></div>
+<div class="paragraph"><p>The above use of the <code>tail</code> command with the <code>-f</code> flag continually rereads and displays the end of the file.
+This is useful when monitoring a log file in real time, for example.
+Use &lt;ctrl&gt;-c to stop reading the file.</p></div>
+</section>
+<section class="slide" id="_service_systemctl_commands">
+<h2>service/systemctl commands</h2>
+<div class="paragraph"><p>The <code>service</code> and <code>systemctl</code> commands control the status of services on the system.
+The following examples are for controlling the Apache web server status.</p></div>
+<div class="paragraph"><p><code>systemctl {start,stop,restart,status} httpd</code></p></div>
+<div class="paragraph"><p><code>service httpd {start,stop,restart,status}</code></p></div>
+</section>
+<section class="slide" id="_man_command">
+<h2>man command</h2>
+<div class="paragraph"><p><code>man &lt;command&gt;</code></p></div>
+<div class="paragraph"><p>The man command displays the manual (help) page for the command indicated.</p></div>
+</section>
+<section class="slide" id="_less_command">
+<h2>less command</h2>
+<div class="paragraph"><p><code>less filename</code></p></div>
+<div class="paragraph"><p>Displays the contents of a file in the terminal window.
+Use the up and down arrows to navigate the file.
+Use a forward slash followed by text to search for to find particular types.</p></div>
+<div class="paragraph"><p><code>/texttosearchfor</code></p></div>
+</section>
+<section class="slide" id="_tar_command">
+<h2>tar command</h2>
+<div class="paragraph"><p><code>tar zxvf filename.tar.gz</code></p></div>
+<div class="paragraph"><p>Extracts the contents of the tar.gz file to the current directory</p></div>
+<div class="paragraph"><p><code>tar zcvf newcompressedfile.tar.gz file1 file2 file3</code></p></div>
+<div class="paragraph"><p>Creates a new compressed file containing all the files indicated in the command</p></div>
+<div class="paragraph"><p><code>tar zcvf newcompressedfile.tar.gz /path/to/files</code></p></div>
+<div class="paragraph"><p>Creates a new compressed file containing all the files in the indicated directory</p></div>
+</section>
+<section class="slide" id="_sudo_command">
+<h2>sudo command</h2>
+<div class="paragraph"><p><code>sudo ls /var/log/messages</code></p></div>
+<div class="paragraph"><p>By default, runs a command as the <code>root</code> user.
+Adding <code>-u &lt;user&gt;</code> will specify a different user to run the command as.</p></div>
+</section>
+<section class="slide" id="_pipe_commands_from_one_to_another_on_a_single_line">
+<h2>Pipe commands from one to another on a single line</h2>
+<div class="paragraph"><p>The pipe <code>|</code> symbol passes the output of a command to another command.
+The following command will output the contents of <code>filename.txt</code> and send it to the <code>grep</code> command.
+The <code>grep</code> command then passes on only the lines of text that contain the word <code>address</code> and writes it <code>&gt;</code> to the <code>addresses.txt</code> file.</p></div>
+<div class="paragraph"><p><code>less filename.txt| grep address &gt; addresses.txt</code></p></div>
+</section>
+<section class="slide" id="_command_line_switches">
+<h2>Command Line Switches</h2>
+<div class="paragraph"><p>Commands are often followed by one or more switches at the command line.
+When one <code>-</code> is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.</p></div>
+<div class="paragraph"><p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p></div>
+<div class="paragraph"><p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p></div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
+</td>
+</tr>
+</table>
+</div>
+</section>
+<section class="slide" id="_other_interesting_commands_and_concepts_to_follow_up_on">
+<h2>Other interesting commands and concepts to follow up on</h2>
+<div class="paragraph"><p>These are commands that are useful to know but fall into a niche category.</p></div>
+<div class="ulist">
+<ul>
+<li><code>netstat</code>/<code>ss</code> - for showing open ports</li>
+<li><code>firewall-cmd</code> - for configuring firewall rules</li>
+<li><code>nmtui</code> - for configuring network manager from the command line</li>
+<li><code>git</code> - version control for files</li>
+<li><code>sed</code> - Stream line editor to change file contents without opening a full editor</li>
+<li><code>^n</code> reads as ctrl-n</li>
+<li><code>!!</code> adds the last command to the current command line</li>
+<li><code>md5sum</code> <code>sha1sum</code> (and others) creates a unique hash of a file to easily compare two or more files</li>
+<li><code>ssh</code> creates a secure shell connection between two computers</li>
+<li><code>scp</code> securely copies files between computers</li>
+<li>environmental variables - easily share configuration settings between applications and processes such as <code>$USER</code>, <code>$HOME</code>, <code>$EDITOR</code>, <code>$BROWSER</code></li>
+<li>regex - Regular Expressions are your friend (once you make friends with them)</li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_dangerous_commands">
+<h2>Dangerous commands</h2>
+<div class="paragraph"><p>These commands should not be used unless you really understand what you&#8217;re doing with them.</p></div>
+<div class="paragraph"><p><code>rm -rf /</code> - Will delete the entire file system</p></div>
+<div class="paragraph"><p><code>mv file /dev/null</code> will move the file to a system device that will delete the file</p></div>
+<div class="paragraph"><p><code>:(){:|:&amp;};:</code> - a fork bomb which creates a function and exectues twice until the system freezes</p></div>
+<div class="paragraph"><p><code>$COMMAND &gt; /dev/sda</code> - overwrites data on the block device, in this case the main drive</p></div>
+<div class="paragraph"><p><code>mkfs.ext4 /dev/sda</code> - formats the block device using the ext4 filesystem, in this case the main drive.
+mkfs. may be a variety of filesystem types.</p></div>
+<div class="paragraph"><p>For more, search for <code>dangerous linux commands</code> in your favorite search engine</p></div>
+</section>
+<section class="slide" id="_bash_system_files">
+<h2>Bash system files</h2>
+<div class="paragraph"><p><code>.bashrc</code> - configuration file for non-login shells</p></div>
+<div class="paragraph"><p><code>.bash_profile</code> - configuration for login shells</p></div>
+<div class="paragraph"><p><code>.bash_history</code> - history of the recent commands run in the bash shell</p></div>
+</section>
+<section class="slide" id="_troubleshooting">
+<h2>Troubleshooting</h2>
+<div class="paragraph"><p>log files are your friend</p></div>
+<div class="paragraph"><p>Common Location&#8201;&#8212;&#8201;/var/log</p></div>
+<div class="paragraph"><p>Read recent system messages&#8201;&#8212;&#8201;<code>tail /var/log/messages</code></p></div>
+<div class="paragraph"><p>Print Kernel messages&#8201;&#8212;&#8201;<code>dmesg</code></p></div>
+</section>
+<section class="slide" id="_resources">
+<h2>Resources</h2>
+<div class="ulist">
+<ul>
+<li><code>vimtutor</code> to learn vim from the command line</li>
+<li>Vim Adventures <a class="bare" href="https://vim-adventures.com">https://vim-adventures.com</a> (pay past level 3)</li>
+<li>Command Line tutorial <a class="bare" href="http://linuxcommand.org/lc3_learning_the_shell.php">http://linuxcommand.org/lc3_learning_the_shell.php</a></li>
+<li>Command Line Magic <a class="bare" href="https://twitter.com/climagic">https://twitter.com/climagic</a></li>
+<li>Explains the entered command based on the man page <a class="bare" href="http://explainshell.com">http://explainshell.com</a></li>
+<li>Test your regex expressions <a class="bare" href="http://regex101.com">http://regex101.com</a></li>
+<li>Practice your knowledge of regex <a class="bare" href="http://regexcrossword.com">http://regexcrossword.com</a></li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all" style="width:100%">
+<colgroup>
+<col style="width:33.3333%">
+<col style="width:33.3333%">
+<col style="width:33.3334%">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">html</th>
+<th class="tableblock halign-center valign-top">presentation</th>
+<th class="tableblock halign-center valign-top">github</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/ZRg5bD">https://goo.gl/ZRg5bD</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/XKkvyN">https://goo.gl/XKkvyN</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://github.com/chuckf/cli_basics">https://github.com/chuckf/cli_basics</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="imageblock">
+<div class="content">
+<img alt="pres html" src="images/pres_html.png">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div><div class="imageblock">
+<div class="content">
+<img alt="pres slides" src="images/pres_slides.png">
+</div>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div><div class="imageblock">
+<div class="content">
+<img alt="github" src="images/github.png">
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<div aria-role="navigation">
+<a class="deck-prev-link" href="#" title="Previous">&#8592;</a>
+<a class="deck-next-link" href="#" title="Next">&#8594;</a>
+</div>
+</div>
+<script src="deck.js/jquery.min.js"></script>
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/split/deck.split.js"></script>
+<script src="deck.js/extensions/toc/deck.toc.js"></script>
+<div class="deck-toc"></div>
+<script>
+  (function($, deck, undefined) {
+    $.deck.defaults.keys['previous'] = [8, 33, 37, 39];
+    $.deck.defaults.keys['next'] = [13, 32, 34, 39];
+  
+    $.extend(true, $[deck].defaults, {
+        countNested: false
+    });
+  
+    $.deck('.slide');
+  })(jQuery, 'deck');
+</script>
+<style>
+  .slide.canvas-image {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -moz-box-align: start;
+  -webkit-box-align: start;
+  -ms-box-align: start;
+  box-align: start;
+  -moz-box-pack: start;
+  -webkit-box-pack: start;
+  -ms-box-pack: start;
+  box-pack: start;}
+  
+  .bottom-left {
+    left: 1%;
+    bottom: 20%; }
+  
+  .top-left {
+    left: 1%;
+    top: 20%; }
+  
+  .bottom-right {
+    right: 1%;
+    bottom: 20%; }
+  
+  .top-right {
+    right: 1%;
+    top: 20%; }
+  
+  .center-up {
+    right: 50%;
+    top: 1%;
+  }
+  
+  .center-down {
+    right: 50%;
+    bottom: 1%;
+  }
+  .canvas-image .canvas-caption p {
+    text-align: center;
+    padding-top: 0;
+    padding: 0;
+    -moz-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    -ms-transform: none;
+    transform: none;
+    display: inline;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 58px;
+    -webkit-box-shadow: 2px 2px 2px #000;
+    -moz-box-shadow: 2px 2px 2px #000;
+    box-shadow: 2px 2px 2px #000;
+    padding: 1rem;
+    color: white; }
+  kbd.keyseq { color: #555555; }
+  kbd:not(.keyseq) {
+    display: inline-block;
+    color: #222222;
+    font-size: 0.7em;
+    line-height: 1.4;
+    background-color: #F7F7F7;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+    margin: -0.15em 0.15em 0 0.15em;
+    padding: 0.2em 0.6em;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  kbd kbd:first-child { margin-left: 0; }
+  kbd kbd:last-child { margin-right: 0; }
+</style>
+</body>
+</html>
