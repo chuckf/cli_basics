@@ -10,13 +10,6 @@ This is not intended to be comprehensive nor are the commands explained meant to
 Please use the information here as a guideline to start from to begin understanding concepts.
 ////
 
-////
-ideas to add
-cp (-R)
-mv
-~
-////
-
 == Command Line Basics
 
 image::images/cli_basics_presentation-77967-resized.png[http://www.commitstrip.com/en/2016/12/22/terminal-forever/]
@@ -107,7 +100,8 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 ----
 (Diagram from linuxcommand.org)
 
-== Permissions
+//== Permissions
+<<<
 
 [cols=1*^,frame=none,grid=none]
 |===
@@ -128,7 +122,6 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 |O |Other User's permissions
 |===
 
-// == Permissions
 <<<
 
 `rwx`
@@ -214,11 +207,11 @@ moves the file from the current location/name to the new location/name.
 
 `rm filename`
 
-deletes the indicated file
+removes(deletes) the indicated file
 
 `rm -rf directoryname`
 
-deletes the indicated directory and all of its contents, including hidden files
+removes(deletes) the indicated directory and all of its contents, including hidden files
 
 == find command
 
@@ -226,7 +219,8 @@ deletes the indicated directory and all of its contents, including hidden files
 
 Searches for the filename.txt file in the current directory and sub directories
 
-Other popular factors to search on include owner, time, type, size, file types, and many others
+Other popular factors to search on include owner, time, type, size, file types
+//, and many others
 
 == grep command
 
@@ -309,17 +303,18 @@ The `grep` command then passes on only the lines of text that contain the word `
 
 These are commands that are useful to know but fall into a niche category.
 
-* netstat/ss - for showing open ports
-* firewall-cmd - for configuring firewall rules
-* nmtui - for configuring network manager from the command line
-* git - version control for files
-* sed - Stream line editor to change file contents without opening a full editor
+* `netstat`/`ss` - for showing open ports
+* `firewall-cmd` - for configuring firewall rules
+* `nmtui` - for configuring network manager from the command line
+* `git` - version control for files
+* `sed` - Stream line editor to change file contents without opening a full editor
 * `^n` reads as ctrl-n
 * `!!` adds the last command to the current command line
 * `md5sum` `sha1sum` (and others) creates a unique hash of a file to easily compare two or more files
 * `ssh` creates a secure shell connection between two computers
 * `scp` securely copies files between computers
-* environmental variables - easily share configuration settings between applications and processes such as $USER, $HOME, $EDITOR, $BROWSER
+* environmental variables - easily share configuration settings between applications and processes such as `$USER`, `$HOME`, `$EDITOR`, `$BROWSER`
+* regex - Regular Expressions are your friend (once you make friends with them)
 
 == Dangerous commands
 
@@ -327,13 +322,14 @@ These commands should not be used unless you really understand what you're doing
 
 `rm -rf /` - Will delete the entire file system
 
-`mv file /dev/null`
+`mv file /dev/null` will move the file to a system device that will delete the file
 
 `:(){:|:&};:` - a fork bomb which creates a function and exectues twice until the system freezes
 
 `$COMMAND > /dev/sda` - overwrites data on the block device, in this case the main drive
 
-`mkfs.* /dev/sda` - formats the block device, in this case the main drive
+`mkfs.ext4 /dev/sda` - formats the block device using the ext4 filesystem, in this case the main drive.
+mkfs. may be a variety of filesystem types.
 
 For more, search for `dangerous linux commands` in your favorite search engine
 
