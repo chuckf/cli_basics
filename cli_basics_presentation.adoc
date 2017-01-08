@@ -19,19 +19,19 @@ mv
 
 == Command Line Basics
 
-image::images/cli_basics_presentation-77967.png[scale=125]
+image::images/cli_basics_presentation-77967.png[]
 
 == Different Distros
 // I don't think this is really needed here
 
 There are many different Linux distributions.
-The most common general purpose ones are, in no particular order:
+The most common ones are, in no particular order:
 
-. Red Hat/CentOS
-. Fedora
-. Ubuntu
-. SUSE
-. Debian
+* Red Hat/CentOS
+* Fedora
+* Ubuntu
+* SUSE
+* Debian
 
 == File structure
 
@@ -43,7 +43,7 @@ The most common general purpose ones are, in no particular order:
 ** `/home/$USER` (Your files)
 ** `/etc` (System configuration files)
 ** `/media` (Mount points for removeable systems)
-** `/opt` (Typically software installed in one place)
+** `/opt` (Typically software packages installed in one place)
 // Need to reword the opt dir description
 ** `/var` (Variable files that change regularly)
 ** `/var/log` (Common default location for log files)
@@ -70,10 +70,10 @@ The most common general purpose ones are, in no particular order:
 * `pwd` (Print working[current] directory)
 * `ls` (list files in directory)
 * `cd` (Change Directory)
-** 'cd /path/to/directory' changes from the current directory to the defined directory
-** 'cd ~' changes from the current directory to the user's home directory
-** 'cd ..' changes from the current directory to the directory one level up
-** 'cd ../../path/to/directory' changes from the current directory to two levels up then down to the new directory
+** `cd /path/to/directory` changes from the current directory to the defined directory
+** `cd ~` changes from the current directory to the user's home directory
+** `cd ..` changes from the current directory to the directory one level up
+** `cd ../../path/to/directory` changes from the current directory to two levels up then down to the new directory
 
 == Permissions
 
@@ -120,9 +120,9 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 |Field |Definition
 |T a|File Type
 
-* '-' file
-* 'd' directory
-* 'l' symlink
+* `-` file
+* `d` directory
+* `l` symlink
 |U |User/Owner Permissions
 |G |Group Permissions
 |O |Other User's permissions
@@ -171,6 +171,7 @@ a|* vi/vim
 |man |for learning how to use commands
 |chmod |for modifying file permissions
 |tar |for compressing and decompressing files
+|sudo |for running a command as a different user, typically root
 |===
 
 == vi/vim commands
@@ -191,21 +192,21 @@ a|* vi/vim
 
 == cp command
 
-'cp filename /path/to/copy/to'
+`cp filename /path/to/copy/to`
 
-'cp filename newfilename'
+`cp filename newfilename`
 
-copies the file from the current location/name to the new location/name.
+copies the file from the current location/name to the new location/name
 
-'cp -R /path/to/directory /path/to/new/directory'
+`cp -R /path/to/directory /path/to/new/directory`
 
 copies the the files and directories from the specified directrory to the new location
 
 == mv command
 
-'mv filename /path/to/new/location'
+`mv filename /path/to/new/location`
 
-'mv filename newfilename'
+`mv filename newfilename`
 
 moves the file from the current location/name to the new location/name.
 
@@ -231,9 +232,9 @@ Other popular factors to search on include owner, time, type, size, file types, 
 
 `grep -iR pattern Documents/`
 
-Searches files for the phrase `pattern` in a case insensitive(i) manner in and below(R) the local `Documents` directory.
+Searches files for the phrase `pattern` in a case insensitive(i) manner in and below\(R) the local `Documents` directory.
 
-== tail/head commands
+== head/tail commands
 
 `head -n 15 filename.txt`
 
@@ -270,22 +271,30 @@ The man command displays the manual (help) page for the command indicated.
 
 Displays the contents of a file in the terminal window.
 Use the up and down arrows to navigate the file.
-Use a forward slash followed by text to search for to find particular types. `/texttosearchfor`
+Use a forward slash followed by text to search for to find particular types.
+
+`/texttosearchfor`
 
 == tar command
 
-'tar zxvf filename.tar.gz'
+`tar zxvf filename.tar.gz`
 
-Extracts the contents of the tar.gz file to the current directory.
+Extracts the contents of the tar.gz file to the current directory
 
-'tar zcvf newcompressedfile.tar.gz file1 file2 file3'
+`tar zcvf newcompressedfile.tar.gz file1 file2 file3`
 
-Creates a new compressed file containing all the files indicated in the command.
+Creates a new compressed file containing all the files indicated in the command
 
-'tar zcvf newcompressedfile.tar.gz /path/to/files'
+`tar zcvf newcompressedfile.tar.gz /path/to/files`
 
-Creates a new compressed file containing all the files in the indicated directory.
+Creates a new compressed file containing all the files in the indicated directory
 
+== sudo command
+
+`sudo ls /var/log/messages`
+
+By default, runs a command as the `root` user.
+Adding `-u <user>` will specify a different user to run the command as.
 
 == Pipe commands from one to another on a single line
 // I'm not sure if join is the right word here
@@ -305,24 +314,28 @@ These are commands that are useful to know but fall into a niche category.
 * nmtui - for configuring network manager from the command line
 * git - version control for files
 * sed - Stream line editor to change file contents without opening a full editor
+* `^n` reads as ctrl-n
+* `!!` adds the last command to the current command line
+* `md5sum` `sha1sum` (and others) creates a unique hash of a file to easily compare two or more files
+* `ssh` creates a secure shell connection between two computers
+* `scp` securely copies files between computers
 * environmental variables - easily share configuration settings between applications and processes such as $USER, $HOME, $EDITOR, $BROWSER
-* '^n' reads as ctrl-n
 
 == Dangerous commands
 
 These commands should not be used unless you really understand what you're doing with them.
 
-'rm -rf /' - Will delete the entire file system
+`rm -rf /` - Will delete the entire file system
 
-'mv file /dev/null'
+`mv file /dev/null`
 
-':(){:|:&};:' - a fork bomb which creates a function and exectues twice until the system freezes
+`:(){:|:&};:` - a fork bomb which creates a function and exectues twice until the system freezes
 
-'$COMMAND > /dev/sda' - overwrites data on the block device, in this case the main drive
+`$COMMAND > /dev/sda` - overwrites data on the block device, in this case the main drive
 
-'mkfs.* /dev/sda' - formats the block device, in this case the main drive
+`mkfs.* /dev/sda` - formats the block device, in this case the main drive
 
-For more, search for 'dangerous linux commands' in your favorite search engine
+For more, search for `dangerous linux commands` in your favorite search engine
 
 == Bash system files
 // list and describe various bash config files
@@ -345,7 +358,7 @@ Print Kernel messages -- `dmesg`
 
 == Resources
 
-* `vimtutor` from the command line
+* `vimtutor` to learn vim from the command line
 * Vim Adventures https://vim-adventures.com (pay past level 3)
 * Command Line tutorial http://linuxcommand.org/lc3_learning_the_shell.php
 * Command Line Magic https://twitter.com/climagic
