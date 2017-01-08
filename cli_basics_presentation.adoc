@@ -3,7 +3,7 @@ Chuck Frain
 :backend: deckjs
 :navigation:
 :split:
-
+:toc: left
 ////
 This presentation is intended to be a basic introduction to Linux command line concepts.
 This is not intended to be comprehensive nor are the commands explained meant to be complete.
@@ -317,7 +317,7 @@ When two '--' are used, the full string is considered the option.
 
 `ls --help` prints the `ls` help file to the screen
 
-WARNING: In some fonts, a `--` notation will appear as a single `-` when rendered.
+IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
 
 == Other interesting commands and concepts to follow up on
 
@@ -381,3 +381,14 @@ Print Kernel messages -- `dmesg`
 * Explains the entered command based on the man page http://explainshell.com
 * Test your regex expressions http://regex101.com
 * Practice your knowledge of regex http://regexcrossword.com
+
+*Links to this presentation*
+
+[cols=3*^,options="header"]
+|===
+|html |presentation |github
+|https://goo.gl/ZRg5bD |https://goo.gl/XKkvyN |https://github.com/chuckf/cli_basics
+a|image::images/pres_html.png[]
+a|image::images/pres_slides.png[]
+a|image::images/github.png[]
+|===
