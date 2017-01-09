@@ -344,7 +344,7 @@ These commands should not be used unless you really understand what you're doing
 
 `mv file /dev/null` will move the file to a system device that will delete the file
 
-`:(){:|:&};:` - a fork bomb which creates a function and exectues twice until the system freezes
+`:(){:|:&};:` - a fork bomb which creates a function and executes it until the system freezes
 
 `$COMMAND > /dev/sda` - overwrites data on the block device, in this case the main drive
 
@@ -376,6 +376,7 @@ Print Kernel messages -- `dmesg`
 
 * `vimtutor` to learn vim from the command line
 * Vim Adventures https://vim-adventures.com (pay past level 3)
+* Vim Casts video tutorials by Drew Neil http://vimcasts.org
 * Command Line tutorial http://linuxcommand.org/lc3_learning_the_shell.php
 * Command Line Magic https://twitter.com/climagic
 * Explains the entered command based on the man page http://explainshell.com
@@ -384,11 +385,11 @@ Print Kernel messages -- `dmesg`
 
 *Links to this presentation*
 
-[cols=3*^,options="header"]
+[cols=2*^,options="header"]
 |===
-|html |presentation |github
-|https://goo.gl/ZRg5bD |https://goo.gl/XKkvyN |https://github.com/chuckf/cli_basics
+|html |github
+|https://goo.gl/ZRg5bD |https://github.com/chuckf/cli_basics
 a|image::images/pres_html.png[]
-a|image::images/pres_slides.png[]
+// a|image::images/pres_slides.png[]
 a|image::images/github.png[]
 |===
