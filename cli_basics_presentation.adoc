@@ -302,10 +302,16 @@ Adding `-u <user>` will specify a different user to run the command as.
 // I'm not sure if join is the right word here
 
 The pipe `|` symbol passes the output of a command to another command.
+
 The following command will output the contents of `filename.txt` and send it to the `grep` command.
 The `grep` command then passes on only the lines of text that contain the word `address` and writes it `>` to the `addresses.txt` file.
 
 `less filename.txt| grep address > addresses.txt`
+
+The following command will run the  `ps -ef` command and show the results that match the phrase `ssh` on the screen
+
+`ps -ef|grep ssh`
+
 
 == Command Line Switches
 
