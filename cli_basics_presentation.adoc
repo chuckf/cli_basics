@@ -1,5 +1,5 @@
 = Command Line Basics
-Chuck Frain
+Chuck Frain <chuck@chuckfrain.net>
 :backend: deckjs
 :navigation:
 :split:
@@ -302,10 +302,16 @@ Adding `-u <user>` will specify a different user to run the command as.
 // I'm not sure if join is the right word here
 
 The pipe `|` symbol passes the output of a command to another command.
+
 The following command will output the contents of `filename.txt` and send it to the `grep` command.
 The `grep` command then passes on only the lines of text that contain the word `address` and writes it `>` to the `addresses.txt` file.
 
 `less filename.txt| grep address > addresses.txt`
+
+The following command will run the  `ps -ef` command and show the results that match the phrase `ssh` on the screen
+
+`ps -ef|grep ssh`
+
 
 == Command Line Switches
 
@@ -328,11 +334,12 @@ These are commands that are useful to know but fall into a niche category.
 * `nmtui` - for configuring network manager from the command line
 * `git` - version control for files
 * `sed` - Stream line editor to change file contents without opening a full editor
-* `^n` reads as ctrl-n
-* `!!` adds the last command to the current command line
 * `md5sum` `sha1sum` (and others) creates a unique hash of a file to easily compare two or more files
 * `ssh` creates a secure shell connection between two computers
 * `scp` securely copies files between computers
+* `^n` reads as ctrl-n
+* `!!` adds the last command to the current command line
+* selinux - kernel security model that has been known to interfere with programs running correctly
 * environmental variables - easily share configuration settings between applications and processes such as `$USER`, `$HOME`, `$EDITOR`, `$BROWSER`
 * regex - Regular Expressions are your friend (once you make friends with them)
 
@@ -344,7 +351,7 @@ These commands should not be used unless you really understand what you're doing
 
 `mv file /dev/null` will move the file to a system device that will delete the file
 
-`:(){:|:&};:` - a fork bomb which creates a function and exectues twice until the system freezes
+`:(){:|:&};:` - a fork bomb which creates a function and executes it until the system freezes
 
 `$COMMAND > /dev/sda` - overwrites data on the block device, in this case the main drive
 
@@ -376,6 +383,7 @@ Print Kernel messages -- `dmesg`
 
 * `vimtutor` to learn vim from the command line
 * Vim Adventures https://vim-adventures.com (pay past level 3)
+* Vim Casts video tutorials by Drew Neil http://vimcasts.org
 * Command Line tutorial http://linuxcommand.org/lc3_learning_the_shell.php
 * Command Line Magic https://twitter.com/climagic
 * Explains the entered command based on the man page http://explainshell.com
@@ -384,11 +392,11 @@ Print Kernel messages -- `dmesg`
 
 *Links to this presentation*
 
-[cols=3*^,options="header"]
+[cols=2*^,options="header"]
 |===
-|html |presentation |github
-|https://goo.gl/lKSNcX |https://goo.gl/fbxgTv |https://github.com/chuckf/cli_basics
+|html |github
+|https://goo.gl/ZRg5bD |https://github.com/chuckf/cli_basics
 a|image::images/pres_html.png[]
-a|image::images/pres_slides.png[]
+// a|image::images/pres_slides.png[]
 a|image::images/github.png[]
 |===
