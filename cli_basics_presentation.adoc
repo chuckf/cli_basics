@@ -328,11 +328,12 @@ These are commands that are useful to know but fall into a niche category.
 * `nmtui` - for configuring network manager from the command line
 * `git` - version control for files
 * `sed` - Stream line editor to change file contents without opening a full editor
-* `^n` reads as ctrl-n
-* `!!` adds the last command to the current command line
 * `md5sum` `sha1sum` (and others) creates a unique hash of a file to easily compare two or more files
 * `ssh` creates a secure shell connection between two computers
 * `scp` securely copies files between computers
+* `^n` reads as ctrl-n
+* `!!` adds the last command to the current command line
+* selinux - kernel security model that has been known to interfere with programs running correctly
 * environmental variables - easily share configuration settings between applications and processes such as `$USER`, `$HOME`, `$EDITOR`, `$BROWSER`
 * regex - Regular Expressions are your friend (once you make friends with them)
 
