@@ -21,6 +21,8 @@
 <h1>Command Line Basics</h1>
 <span id="author">Chuck Frain</span>
 <br>
+<span id="email"><a href="mailto:chuck@chuckfrain.net">chuck@chuckfrain.net</a></span>
+<br>
 </section>
 <section class="slide" id="_command_line_basics">
 <h2>Command Line Basics</h2>
@@ -409,10 +411,12 @@ Adding <code>-u &lt;user&gt;</code> will specify a different user to run the com
 </section>
 <section class="slide" id="_pipe_commands_from_one_to_another_on_a_single_line">
 <h2>Pipe commands from one to another on a single line</h2>
-<div class="paragraph"><p>The pipe <code>|</code> symbol passes the output of a command to another command.
-The following command will output the contents of <code>filename.txt</code> and send it to the <code>grep</code> command.
+<div class="paragraph"><p>The pipe <code>|</code> symbol passes the output of a command to another command.</p></div>
+<div class="paragraph"><p>The following command will output the contents of <code>filename.txt</code> and send it to the <code>grep</code> command.
 The <code>grep</code> command then passes on only the lines of text that contain the word <code>address</code> and writes it <code>&gt;</code> to the <code>addresses.txt</code> file.</p></div>
 <div class="paragraph"><p><code>less filename.txt| grep address &gt; addresses.txt</code></p></div>
+<div class="paragraph"><p>The following command will run the  <code>ps -ef</code> command and show the results that match the phrase <code>ssh</code> on the screen</p></div>
+<div class="paragraph"><p><code>ps -ef|grep ssh</code></p></div>
 </section>
 <section class="slide" id="_command_line_switches">
 <h2>Command Line Switches</h2>
@@ -444,11 +448,12 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <li><code>nmtui</code> - for configuring network manager from the command line</li>
 <li><code>git</code> - version control for files</li>
 <li><code>sed</code> - Stream line editor to change file contents without opening a full editor</li>
-<li><code>^n</code> reads as ctrl-n</li>
-<li><code>!!</code> adds the last command to the current command line</li>
 <li><code>md5sum</code> <code>sha1sum</code> (and others) creates a unique hash of a file to easily compare two or more files</li>
 <li><code>ssh</code> creates a secure shell connection between two computers</li>
 <li><code>scp</code> securely copies files between computers</li>
+<li><code>^n</code> reads as ctrl-n</li>
+<li><code>!!</code> adds the last command to the current command line</li>
+<li>selinux - kernel security model that has been known to interfere with programs running correctly</li>
 <li>environmental variables - easily share configuration settings between applications and processes such as <code>$USER</code>, <code>$HOME</code>, <code>$EDITOR</code>, <code>$BROWSER</code></li>
 <li>regex - Regular Expressions are your friend (once you make friends with them)</li>
 </ul>
@@ -459,7 +464,7 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph"><p>These commands should not be used unless you really understand what you&#8217;re doing with them.</p></div>
 <div class="paragraph"><p><code>rm -rf /</code> - Will delete the entire file system</p></div>
 <div class="paragraph"><p><code>mv file /dev/null</code> will move the file to a system device that will delete the file</p></div>
-<div class="paragraph"><p><code>:(){:|:&amp;};:</code> - a fork bomb which creates a function and exectues twice until the system freezes</p></div>
+<div class="paragraph"><p><code>:(){:|:&amp;};:</code> - a fork bomb which creates a function and executes it until the system freezes</p></div>
 <div class="paragraph"><p><code>$COMMAND &gt; /dev/sda</code> - overwrites data on the block device, in this case the main drive</p></div>
 <div class="paragraph"><p><code>mkfs.ext4 /dev/sda</code> - formats the block device using the ext4 filesystem, in this case the main drive.
 mkfs. may be a variety of filesystem types.</p></div>
@@ -484,6 +489,7 @@ mkfs. may be a variety of filesystem types.</p></div>
 <ul>
 <li><code>vimtutor</code> to learn vim from the command line</li>
 <li>Vim Adventures <a class="bare" href="https://vim-adventures.com">https://vim-adventures.com</a> (pay past level 3)</li>
+<li>Vim Casts video tutorials by Drew Neil <a class="bare" href="http://vimcasts.org">http://vimcasts.org</a></li>
 <li>Command Line tutorial <a class="bare" href="http://linuxcommand.org/lc3_learning_the_shell.php">http://linuxcommand.org/lc3_learning_the_shell.php</a></li>
 <li>Command Line Magic <a class="bare" href="https://twitter.com/climagic">https://twitter.com/climagic</a></li>
 <li>Explains the entered command based on the man page <a class="bare" href="http://explainshell.com">http://explainshell.com</a></li>
@@ -491,34 +497,27 @@ mkfs. may be a variety of filesystem types.</p></div>
 <li>Practice your knowledge of regex <a class="bare" href="http://regexcrossword.com">http://regexcrossword.com</a></li>
 </ul>
 </div>
+<div class="paragraph"><p><strong>Links to this presentation</strong></p></div>
 <table class="tableblock frame-all grid-all" style="width:100%">
 <colgroup>
-<col style="width:33.3333%">
-<col style="width:33.3333%">
-<col style="width:33.3334%">
+<col style="width:50%">
+<col style="width:50%">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top">html</th>
-<th class="tableblock halign-center valign-top">presentation</th>
 <th class="tableblock halign-center valign-top">github</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/ZRg5bD">https://goo.gl/ZRg5bD</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/XKkvyN">https://goo.gl/XKkvyN</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/1SKd29">https://goo.gl/1SKd29</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://github.com/chuckf/cli_basics">https://github.com/chuckf/cli_basics</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><div><div class="imageblock">
 <div class="content">
 <img alt="pres html" src="images/pres_html.png">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div><div class="imageblock">
-<div class="content">
-<img alt="pres slides" src="images/pres_slides.png">
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-top"><div><div class="imageblock">

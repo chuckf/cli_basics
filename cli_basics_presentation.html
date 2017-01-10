@@ -424,6 +424,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>Command Line Basics</h1>
 <div class="details">
 <span id="author" class="author">Chuck Frain</span><br>
+<span id="email" class="email"><a href="mailto:chuck@chuckfrain.net">chuck@chuckfrain.net</a></span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1089,12 +1090,20 @@ Adding <code>-u &lt;user&gt;</code> will specify a different user to run the com
 <h2 id="_pipe_commands_from_one_to_another_on_a_single_line">Pipe commands from one to another on a single line</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The pipe <code>|</code> symbol passes the output of a command to another command.
-The following command will output the contents of <code>filename.txt</code> and send it to the <code>grep</code> command.
+<p>The pipe <code>|</code> symbol passes the output of a command to another command.</p>
+</div>
+<div class="paragraph">
+<p>The following command will output the contents of <code>filename.txt</code> and send it to the <code>grep</code> command.
 The <code>grep</code> command then passes on only the lines of text that contain the word <code>address</code> and writes it <code>&gt;</code> to the <code>addresses.txt</code> file.</p>
 </div>
 <div class="paragraph">
 <p><code>less filename.txt| grep address &gt; addresses.txt</code></p>
+</div>
+<div class="paragraph">
+<p>The following command will run the  <code>ps -ef</code> command and show the results that match the phrase <code>ssh</code> on the screen</p>
+</div>
+<div class="paragraph">
+<p><code>ps -ef|grep ssh</code></p>
 </div>
 </div>
 </div>
@@ -1150,12 +1159,6 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <p><code>sed</code> - Stream line editor to change file contents without opening a full editor</p>
 </li>
 <li>
-<p><code>^n</code> reads as ctrl-n</p>
-</li>
-<li>
-<p><code>!!</code> adds the last command to the current command line</p>
-</li>
-<li>
 <p><code>md5sum</code> <code>sha1sum</code> (and others) creates a unique hash of a file to easily compare two or more files</p>
 </li>
 <li>
@@ -1163,6 +1166,15 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 </li>
 <li>
 <p><code>scp</code> securely copies files between computers</p>
+</li>
+<li>
+<p><code>^n</code> reads as ctrl-n</p>
+</li>
+<li>
+<p><code>!!</code> adds the last command to the current command line</p>
+</li>
+<li>
+<p>selinux - kernel security model that has been known to interfere with programs running correctly</p>
 </li>
 <li>
 <p>environmental variables - easily share configuration settings between applications and processes such as <code>$USER</code>, <code>$HOME</code>, <code>$EDITOR</code>, <code>$BROWSER</code></p>
@@ -1187,7 +1199,7 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <p><code>mv file /dev/null</code> will move the file to a system device that will delete the file</p>
 </div>
 <div class="paragraph">
-<p><code>:(){:|:&amp;};:</code> - a fork bomb which creates a function and exectues twice until the system freezes</p>
+<p><code>:(){:|:&amp;};:</code> - a fork bomb which creates a function and executes it until the system freezes</p>
 </div>
 <div class="paragraph">
 <p><code>$COMMAND &gt; /dev/sda</code> - overwrites data on the block device, in this case the main drive</p>
@@ -1244,6 +1256,9 @@ mkfs. may be a variety of filesystem types.</p>
 <p>Vim Adventures <a href="https://vim-adventures.com" class="bare">https://vim-adventures.com</a> (pay past level 3)</p>
 </li>
 <li>
+<p>Vim Casts video tutorials by Drew Neil <a href="http://vimcasts.org" class="bare">http://vimcasts.org</a></p>
+</li>
+<li>
 <p>Command Line tutorial <a href="http://linuxcommand.org/lc3_learning_the_shell.php" class="bare">http://linuxcommand.org/lc3_learning_the_shell.php</a></p>
 </li>
 <li>
@@ -1265,32 +1280,24 @@ mkfs. may be a variety of filesystem types.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-center valign-top">html</th>
-<th class="tableblock halign-center valign-top">presentation</th>
 <th class="tableblock halign-center valign-top">github</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://goo.gl/ZRg5bD" class="bare">https://goo.gl/ZRg5bD</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://goo.gl/XKkvyN" class="bare">https://goo.gl/XKkvyN</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://goo.gl/1SKd29" class="bare">https://goo.gl/1SKd29</a></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/chuckf/cli_basics" class="bare">https://github.com/chuckf/cli_basics</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><div><div class="imageblock">
 <div class="content">
 <img src="images/pres_html.png" alt="pres html">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div><div class="imageblock">
-<div class="content">
-<img src="images/pres_slides.png" alt="pres slides">
 </div>
 </div></div></td>
 <td class="tableblock halign-center valign-top"><div><div class="imageblock">
@@ -1306,7 +1313,7 @@ mkfs. may be a variety of filesystem types.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-08 12:00:07 EST
+Last updated 2017-01-10 18:11:50 EST
 </div>
 </div>
 </body>
