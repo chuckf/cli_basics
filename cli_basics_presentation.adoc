@@ -1,5 +1,5 @@
 = Command Line Basics
-Chuck Frain
+Chuck Frain <chuck@chuckfrain.net>
 :backend: deckjs
 :navigation:
 :split:
