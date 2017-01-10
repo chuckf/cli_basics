@@ -395,7 +395,7 @@ Print Kernel messages -- `dmesg`
 [cols=2*^,options="header"]
 |===
 |html |github
-|https://goo.gl/ZRg5bD |https://github.com/chuckf/cli_basics
+|https://goo.gl/1SKd29 |https://github.com/chuckf/cli_basics
 a|image::images/pres_html.png[]
 // a|image::images/pres_slides.png[]
 a|image::images/github.png[]
