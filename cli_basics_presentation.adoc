@@ -152,6 +152,17 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 
 `chmod 654 dirname` = drw-r-xr-- permissions to the file
 
+== Command Line Switches
+
+Commands are often followed by one or more switches at the command line.
+When one `-` is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.
+
+`ls -help` attempts to run the `ls` command with the h,l,p options (e is invalid)
+
+`ls --help` prints the `ls` help file to the screen
+
+IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
 
 == Useful Commands
 
@@ -311,19 +322,6 @@ The `grep` command then passes on only the lines of text that contain the word `
 The following command will run the  `ps -ef` command and show the results that match the phrase `ssh` on the screen
 
 `ps -ef|grep ssh`
-
-
-== Command Line Switches
-
-Commands are often followed by one or more switches at the command line.
-When one `-` is used, each character following it is an option.
-When two '--' are used, the full string is considered the option.
-
-`ls -help` attempts to run the `ls` command with the h,l,p options (e is invalid)
-
-`ls --help` prints the `ls` help file to the screen
-
-IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
 
 == Other interesting commands and concepts to follow up on
 
