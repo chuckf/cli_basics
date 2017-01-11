@@ -435,6 +435,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_cli_installers">CLI installers</a></li>
 <li><a href="#_basic_navigation">Basic Navigation</a></li>
 <li><a href="#_permissions">Permissions</a></li>
+<li><a href="#_command_line_switches">Command Line Switches</a></li>
 <li><a href="#_useful_commands">Useful Commands</a></li>
 <li><a href="#_vi_vim_commands">vi/vim commands</a></li>
 <li><a href="#_cp_command">cp command</a></li>
@@ -449,7 +450,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_tar_command">tar command</a></li>
 <li><a href="#_sudo_command">sudo command</a></li>
 <li><a href="#_pipe_commands_from_one_to_another_on_a_single_line">Pipe commands from one to another on a single line</a></li>
-<li><a href="#_command_line_switches">Command Line Switches</a></li>
 <li><a href="#_other_interesting_commands_and_concepts_to_follow_up_on">Other interesting commands and concepts to follow up on</a></li>
 <li><a href="#_dangerous_commands">Dangerous commands</a></li>
 <li><a href="#_bash_system_files">Bash system files</a></li>
@@ -800,6 +800,34 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 </div>
 </div>
 <div class="sect1">
+<h2 id="_command_line_switches">Command Line Switches</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commands are often followed by one or more switches at the command line.
+When one <code>-</code> is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.</p>
+</div>
+<div class="paragraph">
+<p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p>
+</div>
+<div class="paragraph">
+<p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_useful_commands">Useful Commands</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
@@ -1108,34 +1136,6 @@ The <code>grep</code> command then passes on only the lines of text that contain
 </div>
 </div>
 <div class="sect1">
-<h2 id="_command_line_switches">Command Line Switches</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Commands are often followed by one or more switches at the command line.
-When one <code>-</code> is used, each character following it is an option.
-When two '--' are used, the full string is considered the option.</p>
-</div>
-<div class="paragraph">
-<p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p>
-</div>
-<div class="paragraph">
-<p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_other_interesting_commands_and_concepts_to_follow_up_on">Other interesting commands and concepts to follow up on</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1313,7 +1313,7 @@ mkfs. may be a variety of filesystem types.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-10 18:11:50 EST
+Last updated 2017-01-10 21:41:54 EST
 </div>
 </div>
 </body>

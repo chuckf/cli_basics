@@ -246,6 +246,26 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 <div class="paragraph"><p><code>chmod 775 filename</code> = -rwxrwxrw- permissions to the file</p></div>
 <div class="paragraph"><p><code>chmod 654 dirname</code> = drw-r-xr-- permissions to the file</p></div>
 </section>
+<section class="slide" id="_command_line_switches">
+<h2>Command Line Switches</h2>
+<div class="paragraph"><p>Commands are often followed by one or more switches at the command line.
+When one <code>-</code> is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.</p></div>
+<div class="paragraph"><p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p></div>
+<div class="paragraph"><p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p></div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
+</td>
+</tr>
+</table>
+</div>
+</section>
 <section class="slide" id="_useful_commands">
 <h2>Useful Commands</h2>
 <table class="tableblock frame-all grid-all" style="width:100%">
@@ -417,26 +437,6 @@ The <code>grep</code> command then passes on only the lines of text that contain
 <div class="paragraph"><p><code>less filename.txt| grep address &gt; addresses.txt</code></p></div>
 <div class="paragraph"><p>The following command will run the  <code>ps -ef</code> command and show the results that match the phrase <code>ssh</code> on the screen</p></div>
 <div class="paragraph"><p><code>ps -ef|grep ssh</code></p></div>
-</section>
-<section class="slide" id="_command_line_switches">
-<h2>Command Line Switches</h2>
-<div class="paragraph"><p>Commands are often followed by one or more switches at the command line.
-When one <code>-</code> is used, each character following it is an option.
-When two '--' are used, the full string is considered the option.</p></div>
-<div class="paragraph"><p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p></div>
-<div class="paragraph"><p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p></div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
-</td>
-</tr>
-</table>
-</div>
 </section>
 <section class="slide" id="_other_interesting_commands_and_concepts_to_follow_up_on">
 <h2>Other interesting commands and concepts to follow up on</h2>
