@@ -148,7 +148,7 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 
 `chmod 644 filename` = -rw-r--r-- permissions to the file
 
-`chmod 775 filename` = -rwxrwxrw- permissions to the file
+`chmod 776 filename` = -rwxrwxrw- permissions to the file
 
 `chmod 654 dirname` = drw-r-xr-- permissions to the file
 
