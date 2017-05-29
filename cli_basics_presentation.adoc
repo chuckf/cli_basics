@@ -159,11 +159,13 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 
 `chmod` changes the permissions of the file or directory
 
-`chmod 644 filename` = -rw-r--r-- permissions to the file
-
-`chmod 776 filename` = -rwxrwxrw- permissions to the file
-
-`chmod 654 dirname` = drw-r-xr-- permissions to the file
+[options="header"]
+|===
+|Command | Permissions
+|`chmod 644 filename` | -rw-r--r--
+|`chmod 776 filename` | -rwxrwxrw-
+|`chmod 654 dirname` | drw-r-xr--
+|===
 
 == Command Line Switches
 
@@ -201,6 +203,8 @@ a|* vi/vim
 
 == vi/vim commands
 
+image::images/IAmDeveloperVim.jpg[]
+
 `vim filename` - opens the designated file in normal mode
 
 `:help` - displays the vim help file
@@ -234,6 +238,8 @@ copies the the files and directories from the specified directrory to the new lo
 `mv filename newfilename`
 
 moves the file from the current location/name to the new location/name.
+
+`mv` also acts as the rename command.
 
 == rm command
 
@@ -327,10 +333,18 @@ Adding `-u <user>` will specify a different user to run the command as.
 
 The pipe `|` symbol passes the output of a command to another command.
 
-The following command will output the contents of `filename.txt` and send it to the `grep` command.
-The `grep` command then passes on only the lines of text that contain the word `address` and writes it `>` to the `addresses.txt` file.
+The following command will list the contents of the current directory in a long format.
+The `grep` command then filters and displays only the lines of text that contain the word `filename` in a case insensitive manner.
 
-`less filename.txt| grep address > addresses.txt`
+`ls -l|grep -i filename`
+
+[source,bash]
+----
+-rw-rw-r--. 1 chuck chuck          0 May 28 20:01 FILENAME.ADOC
+-rw-rw-r--. 1 chuck chuck          0 May 28 20:00 filename.csv
+-rw-rw-r--. 1 chuck chuck          0 May 28 20:01 FileName.jpg
+-rw-rw-r--. 1 chuck chuck          0 May 28 20:00 filename.txt
+----
 
 The following command will run the  `ps -ef` command and show the results that match the phrase `ssh` on the screen
 
@@ -340,6 +354,7 @@ The following command will run the  `ps -ef` command and show the results that m
 
 These are commands that are useful to know but fall into a niche category.
 
+* `vimdiff` - for showing the differences between two text files
 * `netstat`/`ss` - for showing open ports
 * `firewall-cmd` - for configuring firewall rules
 * `nmtui` - for configuring network manager from the command line
