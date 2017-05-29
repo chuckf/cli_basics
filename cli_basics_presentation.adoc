@@ -201,6 +201,14 @@ a|* vi/vim
 |sudo |for running a command as a different user, typically root
 |===
 
+ifdef::backend-deckjs[]
+== Editor Talk
+
+* vi/vim
+* emacs
+* pico/nano
+endif::[]
+
 == vi/vim commands
 
 image::images/IAmDeveloperVim.jpg[]
