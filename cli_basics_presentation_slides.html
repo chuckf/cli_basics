@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta content="text/html; charset=" http-equiv="Content-Type">
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-<meta content="Asciidoctor 1.5.5" name="generator">
-<meta content="Chuck Frain" name="author">
+<meta content="text/html; charset=" http-equiv="Content-Type" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta content="Asciidoctor 1.5.5" name="generator" />
+<meta content="Chuck Frain" name="author" />
 <title>Command Line Basics</title>
-<link href="deck.js/core/deck.core.css" rel="stylesheet">
-<link href="deck.js/extensions/scale/deck.scale.css" media="screen" rel="stylesheet">
-<link href="deck.js/extensions/navigation/deck.navigation.css" media="screen" rel="stylesheet">
-<link href="deck.js/extensions/toc/deck.toc.css" media="screen" rel="stylesheet">
-<link href="deck.js/themes/style/web-2.0.css" media="screen" rel="stylesheet">
-<link href="deck.js/themes/transition/fade.css" media="screen" rel="stylesheet">
-<link href="deck.js/core/print.css" media="print" rel="stylesheet">
+<link href="deck.js/core/deck.core.css" rel="stylesheet" />
+<link href="deck.js/extensions/scale/deck.scale.css" media="screen" rel="stylesheet" />
+<link href="deck.js/extensions/navigation/deck.navigation.css" media="screen" rel="stylesheet" />
+<link href="deck.js/extensions/toc/deck.toc.css" media="screen" rel="stylesheet" />
+<link href="deck.js/themes/style/web-2.0.css" media="screen" rel="stylesheet" />
+<link href="deck.js/themes/transition/fade.css" media="screen" rel="stylesheet" />
+<link href="deck.js/core/print.css" media="print" rel="stylesheet" />
 <script src="deck.js/modernizr.custom.js"></script>
 </head>
 <body class="article">
@@ -20,17 +20,48 @@
 <section class="slide" id="title-slide">
 <h1>Command Line Basics</h1>
 <span id="author">Chuck Frain</span>
-<br>
+<br />
 <span id="email"><a href="mailto:chuck@chuckfrain.net">chuck@chuckfrain.net</a></span>
-<br>
+<br />
 </section>
 <section class="slide" id="_command_line_basics">
 <h2>Command Line Basics</h2>
 <div class="imageblock">
 <div class="content">
-<img alt="http://www.commitstrip.com/en/2016/12/22/terminal-forever/" src="images/cli_basics_presentation-77967-resized.png">
+<img alt="http://www.commitstrip.com/en/2016/12/22/terminal-forever/" src="images/cli_basics_presentation-77967-resized.png" />
 </div>
 </div>
+<div class="paragraph"><p><strong>Links to this presentation</strong></p></div>
+<table class="tableblock frame-all grid-all" style="width:100%">
+<colgroup>
+<col style="width:50%" />
+<col style="width:50%" />
+</colgroup>
+<thead>
+<tr>
+  <th class="tableblock halign-center valign-top">html</th>
+  <th class="tableblock halign-center valign-top">github</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/1SKd29">https://goo.gl/1SKd29</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://github.com/chuckf/cli_basics">https://github.com/chuckf/cli_basics</a></p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-center valign-top"><div><div class="imageblock">
+  <div class="content">
+  <img alt="pres html" src="images/pres_html.png" />
+  </div>
+  </div></div></td>
+  <td class="tableblock halign-center valign-top"><div><div class="imageblock">
+  <div class="content">
+  <img alt="github" src="images/github.png" />
+  </div>
+  </div></div></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section class="slide" id="_different_nixes">
 <h2>Different *nixes</h2>
@@ -130,81 +161,58 @@ Common directories<div class="ulist">
 <div class="paragraph"><p>The following is the output of <code>ls -lah</code> (long list,all files,human readable)</p></div>
 <div class="listingblock">
 <div class="content">
-<pre><code>total 40
-drwxr-xr-x   6 chuck  staff   204B May 25  2016 .
-drwxr-xr-x  16 chuck  staff   544B Oct 24 21:25 ..
-drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
--rw-r--r--   1 chuck  staff   6.0K May 25  2016 .coffee
--rw-r--r--   1 chuck  staff   2.8K May 25  2016 image-factory-spec.coffee
--rw-r--r--   1 chuck  staff   6.0K May 25  2016 main-spec.coffee
--rw-r--r--   1 chuck  staff   7.5K May 25  2016 main-url-support-spec.coffee
-
-----------   - -----  -----   ---- ------------ ----------------------------
-    |        |   |      |       |       |             |
-    |        |   |      |       |       |             +    File Name
-    |        |   |      |       |       |
-    |        |   |      |       |       +-----------  Modification Time
-    |        |   |      |       |
-    |        |   |      |       +-------------------   Size (in bytes)
-    |        |   |      |
-    |        |   |      +---------------------------        Group
-    |        |   |
-    |        |   +----------------------------------        Owner
-    |        |
-    |        +--------------------------------------        Links
-    |
-    +-----------------------------------------------   File Permissions</code></pre>
+<pre><code>total 40&#x000A;drwxr-xr-x   6 chuck  staff   204B May 25  2016 .&#x000A;drwxr-xr-x  16 chuck  staff   544B Oct 24 21:25 ..&#x000A;drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures&#x000A;-rw-r--r--   1 chuck  staff   6.0K May 25  2016 .coffee&#x000A;-rw-r--r--   1 chuck  staff   2.8K May 25  2016 image-factory-spec.coffee&#x000A;-rw-r--r--   1 chuck  staff   6.0K May 25  2016 main-spec.coffee&#x000A;-rw-r--r--   1 chuck  staff   7.5K May 25  2016 main-url-support-spec.coffee&#x000A;&#x000A;----------   - -----  -----   ---- ------------ ----------------------------&#x000A;    |        |   |      |       |       |             |&#x000A;    |        |   |      |       |       |             +    File Name&#x000A;    |        |   |      |       |       |&#x000A;    |        |   |      |       |       +-----------  Modification Time&#x000A;    |        |   |      |       |&#x000A;    |        |   |      |       +-------------------   Size (in bytes)&#x000A;    |        |   |      |&#x000A;    |        |   |      +---------------------------        Group&#x000A;    |        |   |&#x000A;    |        |   +----------------------------------        Owner&#x000A;    |        |&#x000A;    |        +--------------------------------------        Links&#x000A;    |&#x000A;    +-----------------------------------------------   File Permissions</code></pre>
 </div>
 </div>
 <div class="paragraph"><p>(Diagram from linuxcommand.org)</p></div>
 <div style="page-break-after: always"></div>
 <table class="tableblock frame-none grid-none" style="width:100%">
 <colgroup>
-<col style="width:100%">
+<col style="width:100%" />
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">drwxr-xr-x</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">drwxr-xr-x</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">TUUUGGGOOO</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">TUUUGGGOOO</p></td>
 </tr>
 </tbody>
 </table>
 <table class="tableblock frame-topbot grid-all" style="width:100%">
 <colgroup>
-<col style="width:50%">
-<col style="width:50%">
+<col style="width:50%" />
+<col style="width:50%" />
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Definition</th>
+  <th class="tableblock halign-left valign-top">Field</th>
+  <th class="tableblock halign-left valign-top">Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph"><p>File Type</p></div>
-<div class="ulist">
-<ul>
-<li><code>-</code> file</li>
-<li><code>d</code> directory</li>
-<li><code>l</code> symlink</li>
-</ul>
-</div></div></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+  <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p>File Type</p></div>
+  <div class="ulist">
+  <ul>
+  <li><code>-</code> file</li>
+  <li><code>d</code> directory</li>
+  <li><code>l</code> symlink</li>
+  </ul>
+  </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User/Owner Permissions</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">U</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">User/Owner Permissions</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Group Permissions</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">Group Permissions</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Other User&#8217;s permissions</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">World/Other User&#8217;s permissions</p></td>
 </tr>
 </tbody>
 </table>
@@ -212,39 +220,62 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 <div class="paragraph"><p><code>rwx</code></p></div>
 <table class="tableblock frame-all grid-all" style="width:100%">
 <colgroup>
-<col style="width:33.3333%">
-<col style="width:33.3333%">
-<col style="width:33.3334%">
+<col style="width:33.3333%" />
+<col style="width:33.3333%" />
+<col style="width:33.3334%" />
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Character</th>
-<th class="tableblock halign-left valign-top">Effect</th>
-<th class="tableblock halign-left valign-top">Numerical Value</th>
+  <th class="tableblock halign-left valign-top">Character</th>
+  <th class="tableblock halign-left valign-top">Effect</th>
+  <th class="tableblock halign-left valign-top">Numerical Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">read</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">read</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">write</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">write</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">execute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">execute</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph"><p><code>chmod</code> changes the permissions of the file or directory</p></div>
-<div class="paragraph"><p><code>chmod 644 filename</code> = -rw-r&#8212;&#8203;r-- permissions to the file</p></div>
-<div class="paragraph"><p><code>chmod 776 filename</code> = -rwxrwxrw- permissions to the file</p></div>
-<div class="paragraph"><p><code>chmod 654 dirname</code> = drw-r-xr-- permissions to the file</p></div>
+<table class="tableblock frame-all grid-all" style="width:100%">
+<colgroup>
+<col style="width:50%" />
+<col style="width:50%" />
+</colgroup>
+<thead>
+<tr>
+  <th class="tableblock halign-left valign-top">Command</th>
+  <th class="tableblock halign-left valign-top">Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 644 filename</code></p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">-rw-r&#8212;&#8203;r--</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 776 filename</code></p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">-rwxrwxrw-</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 654 dirname</code></p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">drw-r-xr--</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section class="slide" id="_command_line_switches">
 <h2>Command Line Switches</h2>
@@ -270,79 +301,100 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <h2>Useful Commands</h2>
 <table class="tableblock frame-all grid-all" style="width:100%">
 <colgroup>
-<col style="width:50%">
-<col style="width:50%">
+<col style="width:50%" />
+<col style="width:50%" />
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">Function</th>
+  <th class="tableblock halign-left valign-top">Command</th>
+  <th class="tableblock halign-left valign-top">Function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div><div class="ulist">
+  <td class="tableblock halign-left valign-top"><div><div class="ulist">
+  <ul>
+  <li>vi/vim</li>
+  <li>emacs</li>
+  <li>pico/nano</li>
+  </ul>
+  </div></div></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">For editing files</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">cp</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for copying files</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">mv</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for moving/renaming files</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">rm</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for removing/deleting files or directories</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">find</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for finding files</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">grep</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for finding stuff in files</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">tail/head</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for viewing end/beginning of files</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">service/systemctl</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for starting/stoping/controlling services</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">less</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">show the contents of a file at the cli</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">man</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for learning how to use commands</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">chmod</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for modifying file permissions</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">tar</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for compressing and decompressing files</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">sudo</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for running a command as a different user, typically root</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide" id="_editor_talk">
+<h2>Editor Talk</h2>
+<div class="ulist">
 <ul>
 <li>vi/vim</li>
 <li>emacs</li>
 <li>pico/nano</li>
 </ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For editing files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for copying files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for moving/renaming files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for removing/deleting files or directories</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for finding files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grep</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for finding stuff in files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tail/head</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for viewing end/beginning of files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">service/systemctl</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for starting/stoping/controlling services</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">less</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">show the contents of a file at the cli</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">man</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for learning how to use commands</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">chmod</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for modifying file permissions</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tar</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for compressing and decompressing files</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sudo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">for running a command as a different user, typically root</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="paragraph slide"><p>This is the part where I explain why the next slide is about vi/vim and there aren&#8217;t slides about emacs or pico/nano commands.</p></div>
+<div class="ulist">
+<ul>
+<li class="slide">Its everywhere</li>
+</ul>
+</div>
 </section>
 <section class="slide" id="_vi_vim_commands">
 <h2>vi/vim commands</h2>
+<div class="imageblock">
+<div class="content">
+<img alt="IAmDeveloperVim" src="images/IAmDeveloperVim.jpg" />
+</div>
+</div>
 <div class="paragraph"><p><code>vim filename</code> - opens the designated file in normal mode</p></div>
 <div class="paragraph"><p><code>:help</code> - displays the vim help file</p></div>
 <div class="paragraph"><p><code>/texttosearch</code> - search for text in the document (case sensitive)</p></div>
@@ -364,6 +416,7 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph"><p><code>mv filename /path/to/new/location</code></p></div>
 <div class="paragraph"><p><code>mv filename newfilename</code></p></div>
 <div class="paragraph"><p>moves the file from the current location/name to the new location/name.</p></div>
+<div class="paragraph"><p><code>mv</code> also acts as the rename command.</p></div>
 </section>
 <section class="slide" id="_rm_command">
 <h2>rm command</h2>
@@ -432,9 +485,14 @@ Adding <code>-u &lt;user&gt;</code> will specify a different user to run the com
 <section class="slide" id="_pipe_commands_from_one_to_another_on_a_single_line">
 <h2>Pipe commands from one to another on a single line</h2>
 <div class="paragraph"><p>The pipe <code>|</code> symbol passes the output of a command to another command.</p></div>
-<div class="paragraph"><p>The following command will output the contents of <code>filename.txt</code> and send it to the <code>grep</code> command.
-The <code>grep</code> command then passes on only the lines of text that contain the word <code>address</code> and writes it <code>&gt;</code> to the <code>addresses.txt</code> file.</p></div>
-<div class="paragraph"><p><code>less filename.txt| grep address &gt; addresses.txt</code></p></div>
+<div class="paragraph"><p>The following command will list the contents of the current directory in a long format.
+The <code>grep</code> command then filters and displays only the lines of text that contain the word <code>filename</code> in a case insensitive manner.</p></div>
+<div class="paragraph"><p><code>ls -l|grep -i filename</code></p></div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="bash language-bash">-rw-rw-r--. 1 chuck chuck          0 May 28 20:01 FILENAME.ADOC&#x000A;-rw-rw-r--. 1 chuck chuck          0 May 28 20:00 filename.csv&#x000A;-rw-rw-r--. 1 chuck chuck          0 May 28 20:01 FileName.jpg&#x000A;-rw-rw-r--. 1 chuck chuck          0 May 28 20:00 filename.txt</code></pre>
+</div>
+</div>
 <div class="paragraph"><p>The following command will run the  <code>ps -ef</code> command and show the results that match the phrase <code>ssh</code> on the screen</p></div>
 <div class="paragraph"><p><code>ps -ef|grep ssh</code></p></div>
 </section>
@@ -443,6 +501,7 @@ The <code>grep</code> command then passes on only the lines of text that contain
 <div class="paragraph"><p>These are commands that are useful to know but fall into a niche category.</p></div>
 <div class="ulist">
 <ul>
+<li><code>vimdiff</code> - for showing the differences between two text files</li>
 <li><code>netstat</code>/<code>ss</code> - for showing open ports</li>
 <li><code>firewall-cmd</code> - for configuring firewall rules</li>
 <li><code>nmtui</code> - for configuring network manager from the command line</li>
@@ -500,31 +559,31 @@ mkfs. may be a variety of filesystem types.</p></div>
 <div class="paragraph"><p><strong>Links to this presentation</strong></p></div>
 <table class="tableblock frame-all grid-all" style="width:100%">
 <colgroup>
-<col style="width:50%">
-<col style="width:50%">
+<col style="width:50%" />
+<col style="width:50%" />
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top">html</th>
-<th class="tableblock halign-center valign-top">github</th>
+  <th class="tableblock halign-center valign-top">html</th>
+  <th class="tableblock halign-center valign-top">github</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/1SKd29">https://goo.gl/1SKd29</a></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://github.com/chuckf/cli_basics">https://github.com/chuckf/cli_basics</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/1SKd29">https://goo.gl/1SKd29</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://github.com/chuckf/cli_basics">https://github.com/chuckf/cli_basics</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><div><div class="imageblock">
-<div class="content">
-<img alt="pres html" src="images/pres_html.png">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div><div class="imageblock">
-<div class="content">
-<img alt="github" src="images/github.png">
-</div>
-</div></div></td>
+  <td class="tableblock halign-center valign-top"><div><div class="imageblock">
+  <div class="content">
+  <img alt="pres html" src="images/pres_html.png" />
+  </div>
+  </div></div></td>
+  <td class="tableblock halign-center valign-top"><div><div class="imageblock">
+  <div class="content">
+  <img alt="github" src="images/github.png" />
+  </div>
+  </div></div></td>
 </tr>
 </tbody>
 </table>
@@ -541,104 +600,108 @@ mkfs. may be a variety of filesystem types.</p></div>
 <script src="deck.js/extensions/split/deck.split.js"></script>
 <script src="deck.js/extensions/toc/deck.toc.js"></script>
 <div class="deck-toc"></div>
-<script>
-  (function($, deck, undefined) {
-    $.deck.defaults.keys['previous'] = [8, 33, 37, 39];
-    $.deck.defaults.keys['next'] = [13, 32, 34, 39];
-  
-    $.extend(true, $[deck].defaults, {
-        countNested: false
-    });
-  
-    $.deck('.slide');
-  })(jQuery, 'deck');
+<script type="text/javascript">
+  //<![CDATA[
+    (function($, deck, undefined) {
+      $.deck.defaults.keys['previous'] = [8, 33, 37, 39];
+      $.deck.defaults.keys['next'] = [13, 32, 34, 39];
+    
+      $.extend(true, $[deck].defaults, {
+          countNested: false
+      });
+    
+      $.deck('.slide');
+    })(jQuery, 'deck');
+  //]]>
 </script>
-<style>
-  .slide.canvas-image {
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  display: -moz-box;
-  display: -webkit-box;
-  display: -ms-box;
-  display: box;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
-  -ms-box-orient: vertical;
-  box-orient: vertical;
-  -moz-box-align: start;
-  -webkit-box-align: start;
-  -ms-box-align: start;
-  box-align: start;
-  -moz-box-pack: start;
-  -webkit-box-pack: start;
-  -ms-box-pack: start;
-  box-pack: start;}
-  
-  .bottom-left {
-    left: 1%;
-    bottom: 20%; }
-  
-  .top-left {
-    left: 1%;
-    top: 20%; }
-  
-  .bottom-right {
-    right: 1%;
-    bottom: 20%; }
-  
-  .top-right {
-    right: 1%;
-    top: 20%; }
-  
-  .center-up {
-    right: 50%;
-    top: 1%;
-  }
-  
-  .center-down {
-    right: 50%;
-    bottom: 1%;
-  }
-  .canvas-image .canvas-caption p {
-    text-align: center;
-    padding-top: 0;
-    padding: 0;
-    -moz-transform: none;
-    -webkit-transform: none;
-    -o-transform: none;
-    -ms-transform: none;
-    transform: none;
-    display: inline;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
-    font-size: 58px;
-    -webkit-box-shadow: 2px 2px 2px #000;
-    -moz-box-shadow: 2px 2px 2px #000;
-    box-shadow: 2px 2px 2px #000;
-    padding: 1rem;
-    color: white; }
-  kbd.keyseq { color: #555555; }
-  kbd:not(.keyseq) {
-    display: inline-block;
-    color: #222222;
-    font-size: 0.7em;
-    line-height: 1.4;
-    background-color: #F7F7F7;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
-    margin: -0.15em 0.15em 0 0.15em;
-    padding: 0.2em 0.6em;
-    vertical-align: middle;
-    white-space: nowrap;
-  }
-  kbd kbd:first-child { margin-left: 0; }
-  kbd kbd:last-child { margin-right: 0; }
+<style type="text/css">
+  /*<![CDATA[*/
+    .slide.canvas-image {
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -moz-box-align: start;
+    -webkit-box-align: start;
+    -ms-box-align: start;
+    box-align: start;
+    -moz-box-pack: start;
+    -webkit-box-pack: start;
+    -ms-box-pack: start;
+    box-pack: start;}
+    
+    .bottom-left {
+      left: 1%;
+      bottom: 20%; }
+    
+    .top-left {
+      left: 1%;
+      top: 20%; }
+    
+    .bottom-right {
+      right: 1%;
+      bottom: 20%; }
+    
+    .top-right {
+      right: 1%;
+      top: 20%; }
+    
+    .center-up {
+      right: 50%;
+      top: 1%;
+    }
+    
+    .center-down {
+      right: 50%;
+      bottom: 1%;
+    }
+    .canvas-image .canvas-caption p {
+      text-align: center;
+      padding-top: 0;
+      padding: 0;
+      -moz-transform: none;
+      -webkit-transform: none;
+      -o-transform: none;
+      -ms-transform: none;
+      transform: none;
+      display: inline;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      font-weight: bold;
+      font-size: 58px;
+      -webkit-box-shadow: 2px 2px 2px #000;
+      -moz-box-shadow: 2px 2px 2px #000;
+      box-shadow: 2px 2px 2px #000;
+      padding: 1rem;
+      color: white; }
+    kbd.keyseq { color: #555555; }
+    kbd:not(.keyseq) {
+      display: inline-block;
+      color: #222222;
+      font-size: 0.7em;
+      line-height: 1.4;
+      background-color: #F7F7F7;
+      border: 1px solid #ccc;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+      margin: -0.15em 0.15em 0 0.15em;
+      padding: 0.2em 0.6em;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    kbd kbd:first-child { margin-left: 0; }
+    kbd kbd:last-child { margin-right: 0; }
+  /*]]>*/
 </style>
 </body>
 </html>

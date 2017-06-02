@@ -746,7 +746,7 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Other User&#8217;s permissions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">World/Other User&#8217;s permissions</p></td>
 </tr>
 </tbody>
 </table>
@@ -788,15 +788,32 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 <div class="paragraph">
 <p><code>chmod</code> changes the permissions of the file or directory</p>
 </div>
-<div class="paragraph">
-<p><code>chmod 644 filename</code> = -rw-r&#8212;&#8203;r-- permissions to the file</p>
-</div>
-<div class="paragraph">
-<p><code>chmod 776 filename</code> = -rwxrwxrw- permissions to the file</p>
-</div>
-<div class="paragraph">
-<p><code>chmod 654 dirname</code> = drw-r-xr-- permissions to the file</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 644 filename</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-rw-r&#8212;&#8203;r--</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 776 filename</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-rwxrwxrw-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 654 dirname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">drw-r-xr--</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -968,6 +985,9 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph">
 <p>moves the file from the current location/name to the new location/name.</p>
 </div>
+<div class="paragraph">
+<p><code>mv</code> also acts as the rename command.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1121,11 +1141,19 @@ Adding <code>-u &lt;user&gt;</code> will specify a different user to run the com
 <p>The pipe <code>|</code> symbol passes the output of a command to another command.</p>
 </div>
 <div class="paragraph">
-<p>The following command will output the contents of <code>filename.txt</code> and send it to the <code>grep</code> command.
-The <code>grep</code> command then passes on only the lines of text that contain the word <code>address</code> and writes it <code>&gt;</code> to the <code>addresses.txt</code> file.</p>
+<p>The following command will list the contents of the current directory in a long format.
+The <code>grep</code> command then filters and displays only the lines of text that contain the word <code>filename</code> in a case insensitive manner.</p>
 </div>
 <div class="paragraph">
-<p><code>less filename.txt| grep address &gt; addresses.txt</code></p>
+<p><code>ls -l|grep -i filename</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">-rw-rw-r--. 1 chuck chuck          0 May 28 20:01 FILENAME.ADOC
+-rw-rw-r--. 1 chuck chuck          0 May 28 20:00 filename.csv
+-rw-rw-r--. 1 chuck chuck          0 May 28 20:01 FileName.jpg
+-rw-rw-r--. 1 chuck chuck          0 May 28 20:00 filename.txt</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>The following command will run the  <code>ps -ef</code> command and show the results that match the phrase <code>ssh</code> on the screen</p>
@@ -1143,6 +1171,9 @@ The <code>grep</code> command then passes on only the lines of text that contain
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><code>vimdiff</code> - for showing the differences between two text files</p>
+</li>
 <li>
 <p><code>netstat</code>/<code>ss</code> - for showing open ports</p>
 </li>
@@ -1313,7 +1344,7 @@ mkfs. may be a variety of filesystem types.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-17 20:26:59 EST
+Last updated 2017-06-02 17:32:19 EDT
 </div>
 </div>
 </body>
