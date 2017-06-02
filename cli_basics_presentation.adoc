@@ -122,6 +122,7 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 (Diagram from linuxcommand.org)
 
 //== Permissions
+
 <<<
 
 [cols=1*^,frame=none,grid=none]
@@ -140,7 +141,7 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 * `l` symlink
 |U |User/Owner Permissions
 |G |Group Permissions
-|O |Other User's permissions
+|O |World/Other User's permissions
 |===
 
 <<<
@@ -207,6 +208,14 @@ ifdef::backend-deckjs[]
 * vi/vim
 * emacs
 * pico/nano
+
+[%step]
+
+This is the part where I explain why the next slide is about vi/vim and there aren't slides about emacs or pico/nano commands.
+
+[%step]
+* Its everywhere
+
 endif::[]
 
 == vi/vim commands
