@@ -83,8 +83,8 @@ Some popular versions and distributions are:
 * `pwd` (Print working[current] directory)
 * `ls` (list files in directory)
 * `cd` (Change Directory)
+** `cd` or `cd ~` changes from the current directory to the user's home directory
 ** `cd /path/to/directory` changes from the current directory to the defined directory
-** `cd ~` changes from the current directory to the user's home directory
 ** `cd ..` changes from the current directory to the directory one level up
 ** `cd ../../path/to/directory` changes from the current directory to two levels up then down to the new directory
 ** `cd -` changes from the current directory to the previous directory
