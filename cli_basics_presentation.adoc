@@ -55,13 +55,13 @@ Some popular versions and distributions are:
 *** This is not the root(`/`) of the file system
 ** `/home/$USER` (Your files)
 ** `/etc` (System configuration files)
-** `/media` (Mount points for removeable systems, primarily linux flavors)
-** `/opt` (Typically software packages installed in one place)
+** `/media` (Mount points for removable systems, primarily linux flavors)
+** `/opt` (Typically commercial software packages installed in one place)
 // Need to reword the opt dir description
 ** `/var` (Variable files that change regularly)
 ** `/var/log` (Common default location for log files)
 
-== CLI installers
+== Command Line Interface (CLI) Package Installers
 
 `yum install <package>`
 
@@ -76,6 +76,8 @@ Some popular versions and distributions are:
 ** Debian
 ** Ubuntu
 
+(yum is in the process of being replaced by dnf)
+
 == Basic Navigation
 
 * CasE SensItiVity MatTERs
@@ -88,6 +90,22 @@ Some popular versions and distributions are:
 ** `cd ..` changes from the current directory to the directory one level up
 ** `cd ../../path/to/directory` changes from the current directory to two levels up then down to the new directory
 ** `cd -` changes from the current directory to the previous directory
+
+This is not navigation, but you need to know this
+
+* `^n` reads as ctrl-n
+
+== Command Line Switches
+
+Commands are often followed by one or more switches at the command line.
+When one `-` is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.
+
+`ls -help` attempts to run the `ls` command with the h,l,p options (e is invalid)
+
+`ls --help` prints the `ls` help file to the screen
+
+IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
 
 == Permissions
 
@@ -163,22 +181,10 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 [options="header"]
 |===
 |Command | Permissions
-|`chmod 644 filename` | -rw-r--r--
-|`chmod 776 filename` | -rwxrwxrw-
-|`chmod 654 dirname` | drw-r-xr--
+a|`chmod 644 filename` | -rw-r--r--
+a|`chmod 776 filename` | -rwxrwxrw-
+a|`chmod 654 dirname` | drw-r-xr--
 |===
-
-== Command Line Switches
-
-Commands are often followed by one or more switches at the command line.
-When one `-` is used, each character following it is an option.
-When two '--' are used, the full string is considered the option.
-
-`ls -help` attempts to run the `ls` command with the h,l,p options (e is invalid)
-
-`ls --help` prints the `ls` help file to the screen
-
-IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
 
 == Useful Commands
 
@@ -222,7 +228,17 @@ endif::[]
 
 ifdef::backend-deckjs[]
 image::images/IAmDeveloperVim.jpg[]
+[%step]
+[quote, StackOverflow Blog, 5/23/2017]
+How many people have been struggling to exit Vim?
+In the last year, How to exit the Vim editor has made up about .005% of question traffic: that is, one out of every 20,000 visits to Stack Overflow questions. That means during peak traffic hours on weekdays, there are about 80 people per hour that need help getting out of Vim.
+
+image::images/exit_vim_over_time.png[]
+
+<<<
+
 endif::[]
+
 `vim filename` - opens the designated file in normal mode
 
 `:help` - displays the vim help file
@@ -257,6 +273,7 @@ copies the the files and directories from the specified directrory to the new lo
 
 moves the file from the current location/name to the new location/name.
 
+[NOTE]
 `mv` also acts as the rename command.
 
 == rm command
@@ -269,11 +286,16 @@ removes(deletes) the indicated file
 
 removes(deletes) the indicated directory and all of its contents, including hidden files
 
+[IMPORTANT]
+This is destructive. It cannot be undone.
+
 == find command
 
 `find . -name 'filename.txt'`
 
 Searches for the filename.txt file in the current directory and sub directories
+
+Change `.` in the above command to a path to start at that path and search its sub directories
 
 Other popular factors to search on include owner, time, type, size, file types
 //, and many others
@@ -309,18 +331,17 @@ The following examples are for controlling the Apache web server status.
 
 `service httpd {start,stop,restart,status}`
 
-== man command
-
-`man <command>`
-
-The man command displays the manual (help) page for the command indicated.
-
 == less command
 
 `less filename`
 
 Displays the contents of a file in the terminal window.
+
 Use the up and down arrows to navigate the file.
+
+Use the `v` key to edit the file in the system's default editor.
+When you quit the editor, you return to the `less` process.
+
 Use a forward slash followed by text to search for to find particular types.
 
 `/texttosearchfor`
@@ -368,9 +389,18 @@ The following command will run the  `ps -ef` command and show the results that m
 
 `ps -ef|grep ssh`
 
+== man command
+
+`man <command>`
+
+The man command displays the manual (help) page for the command indicated.
+
+Perhaps the most useful and under-utilized command in this presentation.
+
 == Other interesting commands and concepts to follow up on
 
-These are commands that are useful to know but fall into a niche category.
+These are commands and concepts that are useful to know but may fall into niche categories.
+Many of these will likely be useful at some point to this audience.
 
 * `vimdiff` - for showing the differences between two text files
 * `netstat`/`ss` - for showing open ports
@@ -381,7 +411,6 @@ These are commands that are useful to know but fall into a niche category.
 * `md5sum` `sha1sum` (and others) creates a unique hash of a file to easily compare two or more files
 * `ssh` creates a secure shell connection between two computers
 * `scp` securely copies files between computers
-* `^n` reads as ctrl-n
 * `!!` adds the last command to the current command line
 * selinux - kernel security model that has been known to interfere with programs running correctly
 * environmental variables - easily share configuration settings between applications and processes such as `$USER`, `$HOME`, `$EDITOR`, `$BROWSER`
@@ -400,12 +429,19 @@ These commands should not be used unless you really understand what you're doing
 `$COMMAND > /dev/sda` - overwrites data on the block device, in this case the main drive
 
 `mkfs.ext4 /dev/sda` - formats the block device using the ext4 filesystem, in this case the main drive.
-mkfs. may be a variety of filesystem types.
+mkfs.* may be a variety of filesystem types.
 
+[NOTE]
+
+This list is far from comprehensive.
+It is provided to show that simple and innocent looking things can be very harmful.
+Pay attention and understand the commands you copy and paste from the internet.
 For more, search for `dangerous linux commands` in your favorite search engine
 
 == Bash system files
 // list and describe various bash config files
+Bash is probably the most commonly used shell on *nix systems.
+Similar files will exist for other shells.
 
 `.bashrc` - configuration file for non-login shells
 

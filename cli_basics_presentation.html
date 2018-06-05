@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Chuck Frain">
 <title>Command Line Basics</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -90,13 +90,12 @@ strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
 code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
 ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
-ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
 ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
 ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
-ul.no-bullet{list-style:none}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -132,7 +131,11 @@ strong strong{font-weight:400}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
-.menuseq,.menu{color:rgba(0,0,0,.8)}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
 b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
 b.button:before{content:"[";padding:0 3px 0 2px}
 b.button:after{content:"]";padding:0 2px 0 3px}
@@ -199,7 +202,7 @@ table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
 table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
-.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon img{max-width:initial}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
@@ -255,13 +258,13 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
-table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
-table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
-table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
-table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
-table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
-table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
 table.frame-all{border-width:1px}
 table.frame-sides{border-width:0 1px}
 table.frame-topbot{border-width:1px 0}
@@ -282,10 +285,12 @@ ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
 ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
-ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
-ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
 ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
 ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
 ul.inline>li>*{display:block}
@@ -302,7 +307,8 @@ ol.lowergreek{list-style-type:lower-greek}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
-.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
 .colist>table tr>td:last-of-type{padding:.25em 0}
 .thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
 .imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
@@ -365,6 +371,7 @@ div.unbreakable{page-break-inside:avoid}
 .yellow{color:#bfbf00}
 .yellow-background{background-color:#fafa00}
 span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
 .admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
 .admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
@@ -432,10 +439,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_command_line_basics">Command Line Basics</a></li>
 <li><a href="#_different_nixes">Different *nixes</a></li>
 <li><a href="#_file_structure">File structure</a></li>
-<li><a href="#_cli_installers">CLI installers</a></li>
+<li><a href="#_command_line_interface_cli_package_installers">Command Line Interface (CLI) Package Installers</a></li>
 <li><a href="#_basic_navigation">Basic Navigation</a></li>
-<li><a href="#_permissions">Permissions</a></li>
 <li><a href="#_command_line_switches">Command Line Switches</a></li>
+<li><a href="#_permissions">Permissions</a></li>
 <li><a href="#_useful_commands">Useful Commands</a></li>
 <li><a href="#_vi_vim_commands">vi/vim commands</a></li>
 <li><a href="#_cp_command">cp command</a></li>
@@ -445,11 +452,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_grep_command">grep command</a></li>
 <li><a href="#_head_tail_commands">head/tail commands</a></li>
 <li><a href="#_service_systemctl_commands">service/systemctl commands</a></li>
-<li><a href="#_man_command">man command</a></li>
 <li><a href="#_less_command">less command</a></li>
 <li><a href="#_tar_command">tar command</a></li>
 <li><a href="#_sudo_command">sudo command</a></li>
 <li><a href="#_pipe_commands_from_one_to_another_on_a_single_line">Pipe commands from one to another on a single line</a></li>
+<li><a href="#_man_command">man command</a></li>
 <li><a href="#_other_interesting_commands_and_concepts_to_follow_up_on">Other interesting commands and concepts to follow up on</a></li>
 <li><a href="#_dangerous_commands">Dangerous commands</a></li>
 <li><a href="#_bash_system_files">Bash system files</a></li>
@@ -546,10 +553,10 @@ Some popular versions and distributions are:</p>
 <p><code>/etc</code> (System configuration files)</p>
 </li>
 <li>
-<p><code>/media</code> (Mount points for removeable systems, primarily linux flavors)</p>
+<p><code>/media</code> (Mount points for removable systems, primarily linux flavors)</p>
 </li>
 <li>
-<p><code>/opt</code> (Typically software packages installed in one place)</p>
+<p><code>/opt</code> (Typically commercial software packages installed in one place)</p>
 </li>
 <li>
 <p><code>/var</code> (Variable files that change regularly)</p>
@@ -565,7 +572,7 @@ Some popular versions and distributions are:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_cli_installers">CLI installers</h2>
+<h2 id="_command_line_interface_cli_package_installers">Command Line Interface (CLI) Package Installers</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>yum install &lt;package&gt;</code></p>
@@ -609,6 +616,9 @@ Some popular versions and distributions are:</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>(yum is in the process of being replaced by dnf)</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -633,10 +643,10 @@ Some popular versions and distributions are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>cd /path/to/directory</code> changes from the current directory to the defined directory</p>
+<p><code>cd</code> or <code>cd ~</code> changes from the current directory to the user&#8217;s home directory</p>
 </li>
 <li>
-<p><code>cd ~</code> changes from the current directory to the user&#8217;s home directory</p>
+<p><code>cd /path/to/directory</code> changes from the current directory to the defined directory</p>
 </li>
 <li>
 <p><code>cd ..</code> changes from the current directory to the directory one level up</p>
@@ -651,6 +661,44 @@ Some popular versions and distributions are:</p>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>This is not navigation, but you need to know this</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>^n</code> reads as ctrl-n</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_command_line_switches">Command Line Switches</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Commands are often followed by one or more switches at the command line.
+When one <code>-</code> is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.</p>
+</div>
+<div class="paragraph">
+<p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p>
+</div>
+<div class="paragraph">
+<p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -801,47 +849,25 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 644 filename</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><code>chmod 644 filename</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-rw-r&#8212;&#8203;r--</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 776 filename</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><code>chmod 776 filename</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-rwxrwxrw-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 654 dirname</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><code>chmod 654 dirname</code></p>
+</div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">drw-r-xr--</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_command_line_switches">Command Line Switches</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Commands are often followed by one or more switches at the command line.
-When one <code>-</code> is used, each character following it is an option.
-When two '--' are used, the full string is considered the option.</p>
-</div>
-<div class="paragraph">
-<p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p>
-</div>
-<div class="paragraph">
-<p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -985,8 +1011,17 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph">
 <p>moves the file from the current location/name to the new location/name.</p>
 </div>
-<div class="paragraph">
-<p><code>mv</code> also acts as the rename command.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<code>mv</code> also acts as the rename command.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1005,6 +1040,18 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph">
 <p>removes(deletes) the indicated directory and all of its contents, including hidden files</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+This is destructive. It cannot be undone.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1015,6 +1062,9 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 </div>
 <div class="paragraph">
 <p>Searches for the filename.txt file in the current directory and sub directories</p>
+</div>
+<div class="paragraph">
+<p>Change <code>.</code> in the above command to a path to start at that path and search its sub directories</p>
 </div>
 <div class="paragraph">
 <p>Other popular factors to search on include owner, time, type, size, file types</p>
@@ -1073,26 +1123,23 @@ The following examples are for controlling the Apache web server status.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_man_command">man command</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><code>man &lt;command&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>The man command displays the manual (help) page for the command indicated.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_less_command">less command</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>less filename</code></p>
 </div>
 <div class="paragraph">
-<p>Displays the contents of a file in the terminal window.
-Use the up and down arrows to navigate the file.
-Use a forward slash followed by text to search for to find particular types.</p>
+<p>Displays the contents of a file in the terminal window.</p>
+</div>
+<div class="paragraph">
+<p>Use the up and down arrows to navigate the file.</p>
+</div>
+<div class="paragraph">
+<p>Use the <code>v</code> key to edit the file in the system&#8217;s default editor.
+When you quit the editor, you return to the <code>less</code> process.</p>
+</div>
+<div class="paragraph">
+<p>Use a forward slash followed by text to search for to find particular types.</p>
 </div>
 <div class="paragraph">
 <p><code>/texttosearchfor</code></p>
@@ -1164,10 +1211,25 @@ The <code>grep</code> command then filters and displays only the lines of text t
 </div>
 </div>
 <div class="sect1">
+<h2 id="_man_command">man command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>man &lt;command&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>The man command displays the manual (help) page for the command indicated.</p>
+</div>
+<div class="paragraph">
+<p>Perhaps the most useful and under-utilized command in this presentation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_other_interesting_commands_and_concepts_to_follow_up_on">Other interesting commands and concepts to follow up on</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>These are commands that are useful to know but fall into a niche category.</p>
+<p>These are commands and concepts that are useful to know but may fall into niche categories.
+Many of these will likely be useful at some point to this audience.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1197,9 +1259,6 @@ The <code>grep</code> command then filters and displays only the lines of text t
 </li>
 <li>
 <p><code>scp</code> securely copies files between computers</p>
-</li>
-<li>
-<p><code>^n</code> reads as ctrl-n</p>
 </li>
 <li>
 <p><code>!!</code> adds the last command to the current command line</p>
@@ -1237,16 +1296,32 @@ The <code>grep</code> command then filters and displays only the lines of text t
 </div>
 <div class="paragraph">
 <p><code>mkfs.ext4 /dev/sda</code> - formats the block device using the ext4 filesystem, in this case the main drive.
-mkfs. may be a variety of filesystem types.</p>
+mkfs.* may be a variety of filesystem types.</p>
 </div>
-<div class="paragraph">
-<p>For more, search for <code>dangerous linux commands</code> in your favorite search engine</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This list is far from comprehensive.
+It is provided to show that simple and innocent looking things can be very harmful.
+Pay attention and understand the commands you copy and paste from the internet.
+For more, search for <code>dangerous linux commands</code> in your favorite search engine
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_bash_system_files">Bash system files</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Bash is probably the most commonly used shell on *nix systems.
+Similar files will exist for other shells.</p>
+</div>
 <div class="paragraph">
 <p><code>.bashrc</code> - configuration file for non-login shells</p>
 </div>
@@ -1344,7 +1419,7 @@ mkfs. may be a variety of filesystem types.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-02 17:32:19 EDT
+Last updated 2018-06-04 18:07:13 EDT
 </div>
 </div>
 </body>
