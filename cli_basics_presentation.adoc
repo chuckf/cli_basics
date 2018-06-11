@@ -233,7 +233,7 @@ image::images/IAmDeveloperVim.jpg[]
 How many people have been struggling to exit Vim?
 In the last year, How to exit the Vim editor has made up about .005% of question traffic: that is, one out of every 20,000 visits to Stack Overflow questions. That means during peak traffic hours on weekdays, there are about 80 people per hour that need help getting out of Vim.
 
-image::images/exit_vim_over_time.png[]
+//image::images/exit_vim_over_time.png[]
 
 <<<
 
@@ -327,9 +327,9 @@ Use <ctrl>-c to stop reading the file.
 The `service` and `systemctl` commands control the status of services on the system.
 The following examples are for controlling the Apache web server status.
 
-`systemctl {start,stop,restart,status} httpd`
-
 `service httpd {start,stop,restart,status}`
+
+`systemctl {start,stop,restart,status} httpd`
 
 == less command
 
