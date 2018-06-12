@@ -405,8 +405,11 @@ Perhaps the most useful and under-utilized command in this presentation.
 == ssh command
 
 `ssh someuser@example.com`
+
 `ssh someuser@webdevbox`
+
 `ssh someuser@192.168.1.1`
+
 `ssh myotherbox`
 
 The above commands open a connection from the current computer to a remote computer.
