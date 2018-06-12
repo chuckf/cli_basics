@@ -1,9 +1,12 @@
 = Command Line Basics
 Chuck Frain <chuck@chuckfrain.net>
-:backend: deckjs
+//:backend: deckjs
 :navigation:
 :split:
 :toc: left
+//:revealjs_width: 1280
+//:revealjs_height: 720
+//:revealjs_center: false
 ////
 This presentation is intended to be a basic introduction to Linux command line concepts.
 This is not intended to be comprehensive nor are the commands explained meant to be complete.
@@ -19,11 +22,11 @@ ifdef::backend-deckjs[]
 
 [cols=2*^,options="header"]
 |===
-|html |github
-|https://goo.gl/1SKd29 |https://github.com/chuckf/cli_basics
+|html |gitlab
+|https://goo.gl/1SKd29 |https://gitlab.com/chuckf/cli_basics
 a|image::images/pres_html.png[]
 // a|image::images/pres_slides.png[]
-a|image::images/github.png[]
+a|image::images/gitlab.png[]
 |===
 endif::[]
 
@@ -105,6 +108,7 @@ When two '--' are used, the full string is considered the option.
 
 `ls --help` prints the `ls` help file to the screen
 
+[%step]
 IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
 
 == Permissions
@@ -166,7 +170,7 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 
 `rwx`
 
-[cols=3*,options="header"]
+[cols=3*^,options="header"]
 |===
 |Character
 |Effect
@@ -474,9 +478,9 @@ Print Kernel messages -- `dmesg`
 
 [cols=2*^,options="header"]
 |===
-|html |github
-|https://goo.gl/1SKd29 |https://github.com/chuckf/cli_basics
+|html |gitlab
+|https://goo.gl/1SKd29 |https://gitlab.com/chuckf/cli_basics
 a|image::images/pres_html.png[]
 // a|image::images/pres_slides.png[]
-a|image::images/github.png[]
+a|image::images/gitlab.png[]
 |===

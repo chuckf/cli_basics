@@ -3,7 +3,7 @@
 <head>
 <meta content="text/html; charset=" http-equiv="Content-Type" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<meta content="Asciidoctor 1.5.5" name="generator" />
+<meta content="Asciidoctor 1.5.7.1" name="generator" />
 <meta content="Chuck Frain" name="author" />
 <title>Command Line Basics</title>
 <link href="deck.js/core/deck.core.css" rel="stylesheet" />
@@ -101,8 +101,8 @@ Common directories<div class="ulist">
 </div></p></li>
 <li><code>/home/$USER</code> (Your files)</li>
 <li><code>/etc</code> (System configuration files)</li>
-<li><code>/media</code> (Mount points for removeable systems, primarily linux flavors)</li>
-<li><code>/opt</code> (Typically software packages installed in one place)</li>
+<li><code>/media</code> (Mount points for removable systems, primarily linux flavors)</li>
+<li><code>/opt</code> (Typically commercial software packages installed in one place)</li>
 <li><code>/var</code> (Variable files that change regularly)</li>
 <li><code>/var/log</code> (Common default location for log files)</li>
 </ul>
@@ -110,8 +110,8 @@ Common directories<div class="ulist">
 </ul>
 </div>
 </section>
-<section class="slide" id="_cli_installers">
-<h2>CLI installers</h2>
+<section class="slide" id="_command_line_interface_cli_package_installers">
+<h2>Command Line Interface (CLI) Package Installers</h2>
 <div class="paragraph"><p><code>yum install &lt;package&gt;</code></p></div>
 <div class="paragraph"><p><code>apt-get install &lt;package&gt;</code></p></div>
 <div class="ulist">
@@ -134,6 +134,7 @@ Common directories<div class="ulist">
 </div></p></li>
 </ul>
 </div>
+<div class="paragraph"><p>(yum is in the process of being replaced by dnf)</p></div>
 </section>
 <section class="slide" id="_basic_navigation">
 <h2>Basic Navigation</h2>
@@ -146,14 +147,40 @@ Common directories<div class="ulist">
 <li><p>
 <code>cd</code> (Change Directory)<div class="ulist">
 <ul>
+<li><code>cd</code> or <code>cd ~</code> changes from the current directory to the user&#8217;s home directory</li>
 <li><code>cd /path/to/directory</code> changes from the current directory to the defined directory</li>
-<li><code>cd ~</code> changes from the current directory to the user&#8217;s home directory</li>
 <li><code>cd ..</code> changes from the current directory to the directory one level up</li>
 <li><code>cd ../../path/to/directory</code> changes from the current directory to two levels up then down to the new directory</li>
 <li><code>cd -</code> changes from the current directory to the previous directory</li>
 </ul>
 </div></p></li>
 </ul>
+</div>
+<div class="paragraph"><p>This is not navigation, but you need to know this</p></div>
+<div class="ulist">
+<ul>
+<li><code>^n</code> reads as ctrl-n</li>
+</ul>
+</div>
+</section>
+<section class="slide" id="_command_line_switches">
+<h2>Command Line Switches</h2>
+<div class="paragraph"><p>Commands are often followed by one or more switches at the command line.
+When one <code>-</code> is used, each character following it is an option.
+When two '--' are used, the full string is considered the option.</p></div>
+<div class="paragraph"><p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p></div>
+<div class="paragraph"><p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p></div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title"></div>
+</td>
+<td class="content">
+In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
+</td>
+</tr>
+</table>
 </div>
 </section>
 <section class="slide" id="_permissions">
@@ -226,26 +253,26 @@ Common directories<div class="ulist">
 </colgroup>
 <thead>
 <tr>
-  <th class="tableblock halign-left valign-top">Character</th>
-  <th class="tableblock halign-left valign-top">Effect</th>
-  <th class="tableblock halign-left valign-top">Numerical Value</th>
+  <th class="tableblock halign-center valign-top">Character</th>
+  <th class="tableblock halign-center valign-top">Effect</th>
+  <th class="tableblock halign-center valign-top">Numerical Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">read</p></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">r</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">read</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">4</p></td>
 </tr>
 <tr>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">w</p></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">write</p></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">w</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">write</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">execute</p></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">x</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">execute</p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock">1</p></td>
 </tr>
 </tbody>
 </table>
@@ -263,39 +290,19 @@ Common directories<div class="ulist">
 </thead>
 <tbody>
 <tr>
-  <td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 644 filename</code></p></td>
+  <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><code>chmod 644 filename</code></p></div></div></td>
   <td class="tableblock halign-left valign-top"><p class="tableblock">-rw-r&#8212;&#8203;r--</p></td>
 </tr>
 <tr>
-  <td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 776 filename</code></p></td>
+  <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><code>chmod 776 filename</code></p></div></div></td>
   <td class="tableblock halign-left valign-top"><p class="tableblock">-rwxrwxrw-</p></td>
 </tr>
 <tr>
-  <td class="tableblock halign-left valign-top"><p class="tableblock"><code>chmod 654 dirname</code></p></td>
+  <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><code>chmod 654 dirname</code></p></div></div></td>
   <td class="tableblock halign-left valign-top"><p class="tableblock">drw-r-xr--</p></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section class="slide" id="_command_line_switches">
-<h2>Command Line Switches</h2>
-<div class="paragraph"><p>Commands are often followed by one or more switches at the command line.
-When one <code>-</code> is used, each character following it is an option.
-When two '--' are used, the full string is considered the option.</p></div>
-<div class="paragraph"><p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p></div>
-<div class="paragraph"><p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p></div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-In some fonts, a <code>--</code> notation will appear as a single <code>-</code> when rendered.
-</td>
-</tr>
-</table>
-</div>
 </section>
 <section class="slide" id="_useful_commands">
 <h2>Useful Commands</h2>
@@ -388,13 +395,23 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 </ul>
 </div>
 </section>
-<section class="slide" id="_vi_vim_commands">
+<section class="slide" id="_vivim_commands">
 <h2>vi/vim commands</h2>
 <div class="imageblock">
 <div class="content">
 <img alt="IAmDeveloperVim" src="images/IAmDeveloperVim.jpg" />
 </div>
 </div>
+<div class="quoteblock slide">
+<blockquote>
+How many people have been struggling to exit Vim?
+In the last year, How to exit the Vim editor has made up about .005% of question traffic: that is, one out of every 20,000 visits to Stack Overflow questions. That means during peak traffic hours on weekdays, there are about 80 people per hour that need help getting out of Vim.
+<div class="attribution">
+<cite>StackOverflow Blog, 5/23/2017</cite>
+</div>
+</blockquote>
+</div>
+<div style="page-break-after: always"></div>
 <div class="paragraph"><p><code>vim filename</code> - opens the designated file in normal mode</p></div>
 <div class="paragraph"><p><code>:help</code> - displays the vim help file</p></div>
 <div class="paragraph"><p><code>/texttosearch</code> - search for text in the document (case sensitive)</p></div>
@@ -416,7 +433,18 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph"><p><code>mv filename /path/to/new/location</code></p></div>
 <div class="paragraph"><p><code>mv filename newfilename</code></p></div>
 <div class="paragraph"><p>moves the file from the current location/name to the new location/name.</p></div>
-<div class="paragraph"><p><code>mv</code> also acts as the rename command.</p></div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title"></div>
+</td>
+<td class="content">
+<code>mv</code> also acts as the rename command.
+</td>
+</tr>
+</table>
+</div>
 </section>
 <section class="slide" id="_rm_command">
 <h2>rm command</h2>
@@ -424,11 +452,24 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph"><p>removes(deletes) the indicated file</p></div>
 <div class="paragraph"><p><code>rm -rf directoryname</code></p></div>
 <div class="paragraph"><p>removes(deletes) the indicated directory and all of its contents, including hidden files</p></div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title"></div>
+</td>
+<td class="content">
+This is destructive. It cannot be undone.
+</td>
+</tr>
+</table>
+</div>
 </section>
 <section class="slide" id="_find_command">
 <h2>find command</h2>
 <div class="paragraph"><p><code>find . -name 'filename.txt'</code></p></div>
 <div class="paragraph"><p>Searches for the filename.txt file in the current directory and sub directories</p></div>
+<div class="paragraph"><p>Change <code>.</code> in the above command to a path to start at that path and search its sub directories</p></div>
 <div class="paragraph"><p>Other popular factors to search on include owner, time, type, size, file types</p></div>
 </section>
 <section class="slide" id="_grep_command">
@@ -436,7 +477,7 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <div class="paragraph"><p><code>grep -iR pattern Documents/</code></p></div>
 <div class="paragraph"><p>Searches files for the phrase <code>pattern</code> in a case insensitive(i) manner in and below(R) the local <code>Documents</code> directory.</p></div>
 </section>
-<section class="slide" id="_head_tail_commands">
+<section class="slide" id="_headtail_commands">
 <h2>head/tail commands</h2>
 <div class="paragraph"><p><code>head -n 15 filename.txt</code></p></div>
 <div class="paragraph"><p><code>head</code> displays the first lines of a file (10 by default, 15 in the above example)</p></div>
@@ -447,24 +488,21 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 This is useful when monitoring a log file in real time, for example.
 Use &lt;ctrl&gt;-c to stop reading the file.</p></div>
 </section>
-<section class="slide" id="_service_systemctl_commands">
+<section class="slide" id="_servicesystemctl_commands">
 <h2>service/systemctl commands</h2>
 <div class="paragraph"><p>The <code>service</code> and <code>systemctl</code> commands control the status of services on the system.
 The following examples are for controlling the Apache web server status.</p></div>
-<div class="paragraph"><p><code>systemctl {start,stop,restart,status} httpd</code></p></div>
 <div class="paragraph"><p><code>service httpd {start,stop,restart,status}</code></p></div>
-</section>
-<section class="slide" id="_man_command">
-<h2>man command</h2>
-<div class="paragraph"><p><code>man &lt;command&gt;</code></p></div>
-<div class="paragraph"><p>The man command displays the manual (help) page for the command indicated.</p></div>
+<div class="paragraph"><p><code>systemctl {start,stop,restart,status} httpd</code></p></div>
 </section>
 <section class="slide" id="_less_command">
 <h2>less command</h2>
 <div class="paragraph"><p><code>less filename</code></p></div>
-<div class="paragraph"><p>Displays the contents of a file in the terminal window.
-Use the up and down arrows to navigate the file.
-Use a forward slash followed by text to search for to find particular types.</p></div>
+<div class="paragraph"><p>Displays the contents of a file in the terminal window.</p></div>
+<div class="paragraph"><p>Use the up and down arrows to navigate the file.</p></div>
+<div class="paragraph"><p>Use the <code>v</code> key to edit the file in the system&#8217;s default editor.
+When you quit the editor, you return to the <code>less</code> process.</p></div>
+<div class="paragraph"><p>Use a forward slash followed by text to search for to find particular types.</p></div>
 <div class="paragraph"><p><code>/texttosearchfor</code></p></div>
 </section>
 <section class="slide" id="_tar_command">
@@ -496,9 +534,16 @@ The <code>grep</code> command then filters and displays only the lines of text t
 <div class="paragraph"><p>The following command will run the  <code>ps -ef</code> command and show the results that match the phrase <code>ssh</code> on the screen</p></div>
 <div class="paragraph"><p><code>ps -ef|grep ssh</code></p></div>
 </section>
+<section class="slide" id="_man_command">
+<h2>man command</h2>
+<div class="paragraph"><p><code>man &lt;command&gt;</code></p></div>
+<div class="paragraph"><p>The man command displays the manual (help) page for the command indicated.</p></div>
+<div class="paragraph"><p>Perhaps the most useful and under-utilized command in this presentation.</p></div>
+</section>
 <section class="slide" id="_other_interesting_commands_and_concepts_to_follow_up_on">
 <h2>Other interesting commands and concepts to follow up on</h2>
-<div class="paragraph"><p>These are commands that are useful to know but fall into a niche category.</p></div>
+<div class="paragraph"><p>These are commands and concepts that are useful to know but may fall into niche categories.
+Many of these will likely be useful at some point to this audience.</p></div>
 <div class="ulist">
 <ul>
 <li><code>vimdiff</code> - for showing the differences between two text files</li>
@@ -510,7 +555,6 @@ The <code>grep</code> command then filters and displays only the lines of text t
 <li><code>md5sum</code> <code>sha1sum</code> (and others) creates a unique hash of a file to easily compare two or more files</li>
 <li><code>ssh</code> creates a secure shell connection between two computers</li>
 <li><code>scp</code> securely copies files between computers</li>
-<li><code>^n</code> reads as ctrl-n</li>
 <li><code>!!</code> adds the last command to the current command line</li>
 <li>selinux - kernel security model that has been known to interfere with programs running correctly</li>
 <li>environmental variables - easily share configuration settings between applications and processes such as <code>$USER</code>, <code>$HOME</code>, <code>$EDITOR</code>, <code>$BROWSER</code></li>
@@ -526,11 +570,27 @@ The <code>grep</code> command then filters and displays only the lines of text t
 <div class="paragraph"><p><code>:(){:|:&amp;};:</code> - a fork bomb which creates a function and executes it until the system freezes</p></div>
 <div class="paragraph"><p><code>$COMMAND &gt; /dev/sda</code> - overwrites data on the block device, in this case the main drive</p></div>
 <div class="paragraph"><p><code>mkfs.ext4 /dev/sda</code> - formats the block device using the ext4 filesystem, in this case the main drive.
-mkfs. may be a variety of filesystem types.</p></div>
-<div class="paragraph"><p>For more, search for <code>dangerous linux commands</code> in your favorite search engine</p></div>
+mkfs.* may be a variety of filesystem types.</p></div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title"></div>
+</td>
+<td class="content">
+This list is far from comprehensive.
+It is provided to show that simple and innocent looking things can be very harmful.
+Pay attention and understand the commands you copy and paste from the internet.
+For more, search for <code>dangerous linux commands</code> in your favorite search engine
+</td>
+</tr>
+</table>
+</div>
 </section>
 <section class="slide" id="_bash_system_files">
 <h2>Bash system files</h2>
+<div class="paragraph"><p>Bash is probably the most commonly used shell on *nix systems.
+Similar files will exist for other shells.</p></div>
 <div class="paragraph"><p><code>.bashrc</code> - configuration file for non-login shells</p></div>
 <div class="paragraph"><p><code>.bash_profile</code> - configuration for login shells</p></div>
 <div class="paragraph"><p><code>.bash_history</code> - history of the recent commands run in the bash shell</p></div>
