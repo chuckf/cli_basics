@@ -40,13 +40,13 @@
 <thead>
 <tr>
   <th class="tableblock halign-center valign-top">html</th>
-  <th class="tableblock halign-center valign-top">github</th>
+  <th class="tableblock halign-center valign-top">gitlab</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/1SKd29">https://goo.gl/1SKd29</a></p></td>
-  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://github.com/chuckf/cli_basics">https://github.com/chuckf/cli_basics</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://tinyurl.com/y9gqhswj">https://tinyurl.com/y9gqhswj</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://gitlab.com/chuckf/cli_basics">https://gitlab.com/chuckf/cli_basics</a></p></td>
 </tr>
 <tr>
   <td class="tableblock halign-center valign-top"><div><div class="imageblock">
@@ -56,7 +56,7 @@
   </div></div></td>
   <td class="tableblock halign-center valign-top"><div><div class="imageblock">
   <div class="content">
-  <img alt="github" src="images/github.png" />
+  <img alt="gitlab" src="images/gitlab.png" />
   </div>
   </div></div></td>
 </tr>
@@ -361,10 +361,6 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
   <td class="tableblock halign-left valign-top"><p class="tableblock">show the contents of a file at the cli</p></td>
 </tr>
 <tr>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">man</p></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">for learning how to use commands</p></td>
-</tr>
-<tr>
   <td class="tableblock halign-left valign-top"><p class="tableblock">chmod</p></td>
   <td class="tableblock halign-left valign-top"><p class="tableblock">for modifying file permissions</p></td>
 </tr>
@@ -375,6 +371,14 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 <tr>
   <td class="tableblock halign-left valign-top"><p class="tableblock">sudo</p></td>
   <td class="tableblock halign-left valign-top"><p class="tableblock">for running a command as a different user, typically root</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">man</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for learning how to use commands</p></td>
+</tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">ssh</p></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">for connecting to other machines</p></td>
 </tr>
 </tbody>
 </table>
@@ -540,6 +544,21 @@ The <code>grep</code> command then filters and displays only the lines of text t
 <div class="paragraph"><p>The man command displays the manual (help) page for the command indicated.</p></div>
 <div class="paragraph"><p>Perhaps the most useful and under-utilized command in this presentation.</p></div>
 </section>
+<section class="slide" id="_ssh_command">
+<h2>ssh command</h2>
+<div class="paragraph"><p><code>ssh <a href="mailto:someuser@example.com">someuser@example.com</a></code></p></div>
+<div class="paragraph"><p><code>ssh someuser@webdevbox</code></p></div>
+<div class="paragraph"><p><code>ssh someuser@192.168.1.1</code></p></div>
+<div class="paragraph"><p><code>ssh myotherbox</code></p></div>
+<div class="paragraph"><p>The above commands open a connection from the current computer to a remote computer.
+You will be prompted for a password or utilize a matching ssh key for authentication.
+Once connected, all commands you execute are performed on the remote machine.
+If a username is specified, you are connected as that user.
+If no username is specified, your current username is assumed.</p></div>
+<div class="paragraph"><p><code>ssh <a href="mailto:someuser@example.com">someuser@example.com</a> systemctl restart httpd</code></p></div>
+<div class="paragraph"><p>The above command will log into the remote machine as someuser and run the command specified.
+In this case, it is restarting the Apache webserver.</p></div>
+</section>
 <section class="slide" id="_other_interesting_commands_and_concepts_to_follow_up_on">
 <h2>Other interesting commands and concepts to follow up on</h2>
 <div class="paragraph"><p>These are commands and concepts that are useful to know but may fall into niche categories.
@@ -553,9 +572,9 @@ Many of these will likely be useful at some point to this audience.</p></div>
 <li><code>git</code> - version control for files</li>
 <li><code>sed</code> - Stream line editor to change file contents without opening a full editor</li>
 <li><code>md5sum</code> <code>sha1sum</code> (and others) creates a unique hash of a file to easily compare two or more files</li>
-<li><code>ssh</code> creates a secure shell connection between two computers</li>
 <li><code>scp</code> securely copies files between computers</li>
 <li><code>!!</code> adds the last command to the current command line</li>
+<li><code>screen</code> or <code>tmux</code> are terminal multiplexers, with <code>tmux</code> being the more modern version</li>
 <li>selinux - kernel security model that has been known to interfere with programs running correctly</li>
 <li>environmental variables - easily share configuration settings between applications and processes such as <code>$USER</code>, <code>$HOME</code>, <code>$EDITOR</code>, <code>$BROWSER</code></li>
 <li>regex - Regular Expressions are your friend (once you make friends with them)</li>
@@ -625,13 +644,13 @@ Similar files will exist for other shells.</p></div>
 <thead>
 <tr>
   <th class="tableblock halign-center valign-top">html</th>
-  <th class="tableblock halign-center valign-top">github</th>
+  <th class="tableblock halign-center valign-top">gitlab</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://goo.gl/1SKd29">https://goo.gl/1SKd29</a></p></td>
-  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://github.com/chuckf/cli_basics">https://github.com/chuckf/cli_basics</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://tinyurl.com/y9gqhswj">https://tinyurl.com/y9gqhswj</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://gitlab.com/chuckf/cli_basics">https://gitlab.com/chuckf/cli_basics</a></p></td>
 </tr>
 <tr>
   <td class="tableblock halign-center valign-top"><div><div class="imageblock">
@@ -641,7 +660,7 @@ Similar files will exist for other shells.</p></div>
   </div></div></td>
   <td class="tableblock halign-center valign-top"><div><div class="imageblock">
   <div class="content">
-  <img alt="github" src="images/github.png" />
+  <img alt="gitlab" src="images/gitlab.png" />
   </div>
   </div></div></td>
 </tr>

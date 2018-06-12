@@ -4,6 +4,7 @@ Chuck Frain <chuck@chuckfrain.net>
 :navigation:
 :split:
 :toc: left
+:tiny: https://tinyurl.com/y9gqhswj
 //:revealjs_width: 1280
 //:revealjs_height: 720
 //:revealjs_center: false
@@ -23,7 +24,7 @@ ifdef::backend-deckjs[]
 [cols=2*^,options="header"]
 |===
 |html |gitlab
-|https://goo.gl/1SKd29 |https://gitlab.com/chuckf/cli_basics
+|{tiny} |https://gitlab.com/chuckf/cli_basics
 a|image::images/pres_html.png[]
 // a|image::images/pres_slides.png[]
 a|image::images/gitlab.png[]
@@ -502,7 +503,7 @@ Print Kernel messages -- `dmesg`
 [cols=2*^,options="header"]
 |===
 |html |gitlab
-|https://goo.gl/1SKd29 |https://gitlab.com/chuckf/cli_basics
+|{tiny} |https://gitlab.com/chuckf/cli_basics
 a|image::images/pres_html.png[]
 // a|image::images/pres_slides.png[]
 a|image::images/gitlab.png[]
