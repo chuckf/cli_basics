@@ -435,6 +435,7 @@ Many of these will likely be useful at some point to this audience.
 * `md5sum` `sha1sum` (and others) creates a unique hash of a file to easily compare two or more files
 * `scp` securely copies files between computers
 * `!!` adds the last command to the current command line
+* `screen` or `tmux` are terminal multiplexers, with `tmux` being the more modern version
 * selinux - kernel security model that has been known to interfere with programs running correctly
 * environmental variables - easily share configuration settings between applications and processes such as `$USER`, `$HOME`, `$EDITOR`, `$BROWSER`
 * regex - Regular Expressions are your friend (once you make friends with them)
