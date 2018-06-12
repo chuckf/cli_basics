@@ -206,10 +206,11 @@ a|* vi/vim
 |tail/head |for viewing end/beginning of files
 |service/systemctl |for starting/stoping/controlling services
 |less |show the contents of a file at the cli
-|man |for learning how to use commands
 |chmod |for modifying file permissions
 |tar |for compressing and decompressing files
 |sudo |for running a command as a different user, typically root
+|man |for learning how to use commands
+|ssh |for connecting to other machines
 |===
 
 ifdef::backend-deckjs[]
@@ -401,6 +402,25 @@ The man command displays the manual (help) page for the command indicated.
 
 Perhaps the most useful and under-utilized command in this presentation.
 
+== ssh command
+
+`ssh someuser@example.com`
+`ssh someuser@webdevbox`
+`ssh someuser@192.168.1.1`
+`ssh myotherbox`
+
+The above commands open a connection from the current computer to a remote computer.
+You will be prompted for a password or utilize a matching ssh key for authentication.
+Once connected, all commands you execute are performed on the remote machine.
+If a username is specified, you are connected as that user.
+If no username is specified, your current username is assumed.
+
+`ssh someuser@example.com systemctl restart httpd`
+
+The above command will log into the remote machine as someuser and run the command specified.
+In this case, it is restarting the Apache webserver.
+
+
 == Other interesting commands and concepts to follow up on
 
 These are commands and concepts that are useful to know but may fall into niche categories.
@@ -413,7 +433,6 @@ Many of these will likely be useful at some point to this audience.
 * `git` - version control for files
 * `sed` - Stream line editor to change file contents without opening a full editor
 * `md5sum` `sha1sum` (and others) creates a unique hash of a file to easily compare two or more files
-* `ssh` creates a secure shell connection between two computers
 * `scp` securely copies files between computers
 * `!!` adds the last command to the current command line
 * selinux - kernel security model that has been known to interfere with programs running correctly
