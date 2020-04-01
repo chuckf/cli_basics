@@ -106,9 +106,11 @@ Commands are often followed by one or more switches at the command line.
 When one `-` is used, each character following it is an option.
 When two '--' are used, the full string is considered the option.
 
-`ls -help` attempts to run the `ls` command with the h,l,p options (e is invalid)
+`ls -help` attempts to run the `ls` command with the h,l,p options*
 
 `ls --help` prints the `ls` help file to the screen
+
+\* `e` is invalid, but needed for the demo
 
 [%step]
 IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
