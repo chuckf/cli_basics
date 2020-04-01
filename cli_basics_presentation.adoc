@@ -97,8 +97,8 @@ Some popular versions and distributions are:
 
 This is not navigation, but you need to know this
 
-* `^n` reads as ctrl-n
-* $ appended to a word is a variable that can represent an option in that context
+* `^n` or `^-n` reads as ctrl-n
+* $ appended to the beginning of a word is a variable that can represent an option in that context
 
 == Command Line Switches
 
