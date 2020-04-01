@@ -191,7 +191,8 @@ drwxr-xr-x   5 chuck  staff   170B May 25  2016 fixtures
 |Command | Permissions
 a|`chmod 644 filename` | -rw-r--r--
 a|`chmod 776 filename` | -rwxrwxrw-
-a|`chmod 654 dirname` | drw-r-xr--
+a|`chmod 654 dirname`  | drw-r-xr--
+a|`chmod 722 filename` | -rw--w--w-
 |===
 
 == Useful Commands
