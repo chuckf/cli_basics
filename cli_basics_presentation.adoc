@@ -132,7 +132,7 @@ When two '--' are used, the full string is considered the option.
 
 `ls --help` prints the `ls` help file to the screen
 
-\* `e` is invalid, but needed for the demo
+(*`e` is invalid, but needed for the demo)
 
 [%step]
 IMPORTANT: In some fonts, a `--` notation will appear as a single `-` when rendered.
@@ -279,6 +279,10 @@ endif::[]
 `i` - insert mode to edit the file
 
 `esc` - return to command mode
+
+`:w` - write/save the file to disk
+
+`:q` - quit the editor if no changes were made or unsaved
 
 `:wq` - write/save the file and quit the editor
 
