@@ -18,7 +18,7 @@ Please use the information here as a guideline to start from to begin understand
 
 image::images/cli_basics_presentation-77967-resized.png[http://www.commitstrip.com/en/2016/12/22/terminal-forever/]
 
-include::links_to_this.adoc[]
+// include::links_to_this.adoc[]
 
 ////
 ifdef::backend-deckjs[]
