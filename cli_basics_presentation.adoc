@@ -35,6 +35,24 @@ a|image::images/gitlab.png[]
 endif::[]
 ////
 
+== Different Shells
+
+When we speak of the command line, we are working in what is known as a shell.
+A shell is a program that passes typed commands to the computer's operating system to execute.
+The following is a list of popular shells that you will encounter:
+
+* bash
+* dash
+* sh
+* ksh
+* zsh
+* csh
+* powershell
+
+Current shell - `echo $0`
+
+Default shell - `echo $SHELL`
+
 == Different *nixes
 // I don't think this is really needed here
 
