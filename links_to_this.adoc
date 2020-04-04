@@ -1,0 +1,10 @@
+*Links to this presentation*
+
+[cols=2*^,options="header"]
+|===
+|html |gitlab
+|{tiny} |https://gitlab.com/chuckf/cli_basics
+a|image::images/pres_html.png[]
+// a|image::images/pres_slides.png[]
+a|image::images/gitlab.png[]
+|===

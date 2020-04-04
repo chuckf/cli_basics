@@ -18,6 +18,9 @@ Please use the information here as a guideline to start from to begin understand
 
 image::images/cli_basics_presentation-77967-resized.png[http://www.commitstrip.com/en/2016/12/22/terminal-forever/]
 
+include::links_to_this.adoc[]
+
+////
 ifdef::backend-deckjs[]
 *Links to this presentation*
 
@@ -30,6 +33,7 @@ a|image::images/pres_html.png[]
 a|image::images/gitlab.png[]
 |===
 endif::[]
+////
 
 == Different *nixes
 // I don't think this is really needed here
@@ -497,18 +501,9 @@ Print Kernel messages -- `dmesg`
 * Vim Casts video tutorials by Drew Neil http://vimcasts.org
 * Command Line tutorial http://linuxcommand.org/lc3_learning_the_shell.php
 * Command Line Magic https://twitter.com/climagic
-* Julia Evans https://twitter.com/b0rk https://wizardzines.com 
+* Julia Evans https://twitter.com/b0rk https://wizardzines.com
 * Explains the entered command based on the man page http://explainshell.com
 * Test your regex expressions http://regex101.com
 * Practice your knowledge of regex http://regexcrossword.com
 
-*Links to this presentation*
-
-[cols=2*^,options="header"]
-|===
-|html |gitlab
-|{tiny} |https://gitlab.com/chuckf/cli_basics
-a|image::images/pres_html.png[]
-// a|image::images/pres_slides.png[]
-a|image::images/gitlab.png[]
-|===
+include::links_to_this.adoc[]
