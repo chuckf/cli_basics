@@ -311,6 +311,18 @@ moves the file from the current location/name to the new location/name.
 [NOTE]
 `mv` also acts as the rename command.
 
+== mkdir command
+
+`mkdir directoryname`
+
+`mkdir -p path/to/new/direcctory`
+
+`mkdir -v`
+
+`mkdir -m=744 directory`
+
+creates directories to store files and directories 
+
 == rm command
 
 `rm filename`
