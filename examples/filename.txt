@@ -1,0 +1,50 @@
+2020-04-08T00:30:36Z DEBUG Making cache files for all metadata files.
+2020-04-08T00:30:36Z INFO Metadata cache refreshed recently.
+2020-04-08T00:30:36Z DDEBUG Cleaning up.
+2020-04-08T01:31:32Z INFO --- logging initialized ---
+2020-04-08T01:31:32Z DDEBUG timer: config: 9 ms
+2020-04-08T01:31:32Z DEBUG Loaded plugins: builddep, changelog, config-manager, copr, debug, debuginfo-install, download, generate_completion_cache, needs-restarting, playground, repoclosure, repodiff, repograph, repomanage, reposync, system-upgrade
+2020-04-08T01:31:32Z DEBUG DNF version: 4.2.18
+2020-04-08T01:31:32Z DDEBUG Command: dnf makecache --timer 
+2020-04-08T01:31:32Z DDEBUG Installroot: /
+2020-04-08T01:31:32Z DDEBUG Releasever: 31
+2020-04-08T01:31:32Z DEBUG cachedir: /var/cache/dnf
+2020-04-08T01:31:32Z DDEBUG Base command: makecache
+2020-04-08T01:31:32Z DDEBUG Extra commands: ['makecache', '--timer']
+2020-04-08T01:31:32Z DEBUG Unknown configuration value: failovermethod=priority in /etc/yum.repos.d/fedora-updates-modular.repo; Configuration: OptionBinding with id "failovermethod" does not exist
+2020-04-08T01:31:32Z DEBUG Unknown configuration value: failovermethod=priority in /etc/yum.repos.d/fedora-updates-modular.repo; Configuration: OptionBinding with id "failovermethod" does not exist
+2020-04-08T01:31:32Z DEBUG Unknown configuration value: failovermethod=priority in /etc/yum.repos.d/fedora-updates-modular.repo; Configuration: OptionBinding with id "failovermethod" does not exist
+2020-04-08T01:31:32Z DEBUG Unknown configuration value: failovermethod=priority in /etc/yum.repos.d/teamviewer.repo; Configuration: OptionBinding with id "failovermethod" does not exist
+2020-04-08T01:31:32Z DEBUG Making cache files for all metadata files.
+2020-04-08T01:31:32Z DEBUG copr:copr.fedorainfracloud.org:jdoss:wireguard: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG fedora-modular: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG updates-modular: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG updates: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG fedora: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG rpmfusion-free-updates: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG rpmfusion-free: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG slack: has expired and will be refreshed.
+2020-04-08T01:31:33Z DEBUG teamviewer: has expired and will be refreshed.
+2020-04-08T01:31:34Z DEBUG reviving: 'copr:copr.fedorainfracloud.org:jdoss:wireguard' can be revived - repomd matches.
+2020-04-08T01:31:34Z DEBUG copr:copr.fedorainfracloud.org:jdoss:wireguard: using metadata from Tue 07 Apr 2020 06:34:44 AM EDT.
+2020-04-08T01:31:35Z DEBUG reviving: 'fedora-modular' can be revived - metalink checksums match.
+2020-04-08T01:31:35Z DEBUG fedora-modular: using metadata from Wed 23 Oct 2019 06:53:13 PM EDT.
+2020-04-08T01:31:35Z DEBUG reviving: 'updates-modular' can be revived - metalink checksums match.
+2020-04-08T01:31:35Z DEBUG updates-modular: using metadata from Tue 07 Apr 2020 01:17:57 AM EDT.
+2020-04-08T01:31:35Z DEBUG reviving: 'updates' can be revived - metalink checksums match.
+2020-04-08T01:31:36Z DEBUG updates: using metadata from Mon 06 Apr 2020 10:09:21 PM EDT.
+2020-04-08T01:31:36Z DEBUG reviving: 'fedora' can be revived - metalink checksums match.
+2020-04-08T01:31:37Z DEBUG fedora: using metadata from Wed 23 Oct 2019 06:52:47 PM EDT.
+2020-04-08T01:31:37Z DEBUG reviving: 'rpmfusion-free-updates' can be revived - metalink checksums match.
+2020-04-08T01:31:37Z DEBUG rpmfusion-free-updates: using metadata from Tue 07 Apr 2020 06:56:24 AM EDT.
+2020-04-08T01:31:38Z DEBUG reviving: 'rpmfusion-free' can be revived - metalink checksums match.
+2020-04-08T01:31:38Z DEBUG rpmfusion-free: using metadata from Tue 22 Oct 2019 06:21:36 AM EDT.
+2020-04-08T01:31:39Z DEBUG reviving: 'slack' can be revived - repomd matches.
+2020-04-08T01:31:39Z DEBUG slack: using metadata from Tue 24 Mar 2020 05:10:22 PM EDT.
+2020-04-08T01:31:39Z DEBUG reviving: 'teamviewer' can be revived - repomd matches.
+2020-04-08T01:31:39Z DEBUG teamviewer: using metadata from Tue 24 Mar 2020 04:50:00 AM EDT.
+2020-04-08T01:31:39Z DEBUG User-Agent: constructed: 'libdnf (Fedora 31; workstation; Linux.x86_64)'
+2020-04-08T01:31:40Z DDEBUG timer: sack setup: 6426 ms
+2020-04-08T01:31:40Z DEBUG Completion plugin: Generating completion cache...
+2020-04-08T01:31:41Z INFO Metadata cache created.
+2020-04-08T01:31:41Z DDEBUG Cleaning up.
