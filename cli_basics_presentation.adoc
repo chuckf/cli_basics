@@ -4,7 +4,7 @@ Chuck Frain <chuck@chuckfrain.net>
 :navigation:
 :split:
 :toc: left
-:tiny: https://tinyurl.com/r92gltm
+:tiny: https://tinyurl.com/uk3nsd9
 //:revealjs_width: 1280
 //:revealjs_height: 720
 //:revealjs_center: false
