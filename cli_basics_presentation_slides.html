@@ -3,7 +3,7 @@
 <head>
 <meta content="text/html; charset=" http-equiv="Content-Type" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<meta content="Asciidoctor 1.5.7.1" name="generator" />
+<meta content="Asciidoctor 2.0.10" name="generator" />
 <meta content="Chuck Frain" name="author" />
 <title>Command Line Basics</title>
 <link href="deck.js/core/deck.core.css" rel="stylesheet" />
@@ -31,37 +31,25 @@
 <img alt="http://www.commitstrip.com/en/2016/12/22/terminal-forever/" src="images/cli_basics_presentation-77967-resized.png" />
 </div>
 </div>
-<div class="paragraph"><p><strong>Links to this presentation</strong></p></div>
-<table class="tableblock frame-all grid-all" style="width:100%">
-<colgroup>
-<col style="width:50%" />
-<col style="width:50%" />
-</colgroup>
-<thead>
-<tr>
-  <th class="tableblock halign-center valign-top">html</th>
-  <th class="tableblock halign-center valign-top">gitlab</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://tinyurl.com/y9gqhswj">https://tinyurl.com/y9gqhswj</a></p></td>
-  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://gitlab.com/chuckf/cli_basics">https://gitlab.com/chuckf/cli_basics</a></p></td>
-</tr>
-<tr>
-  <td class="tableblock halign-center valign-top"><div><div class="imageblock">
-  <div class="content">
-  <img alt="pres html" src="images/pres_html.png" />
-  </div>
-  </div></div></td>
-  <td class="tableblock halign-center valign-top"><div><div class="imageblock">
-  <div class="content">
-  <img alt="gitlab" src="images/gitlab.png" />
-  </div>
-  </div></div></td>
-</tr>
-</tbody>
-</table>
+</section>
+<section class="slide" id="_different_shells">
+<h2>Different Shells</h2>
+<div class="paragraph"><p>When we speak of the command line, we are working in what is known as a shell.
+A shell is a program that passes typed commands to the computer&#8217;s operating system to execute.
+The following is a list of popular shells that you will encounter:</p></div>
+<div class="ulist">
+<ul>
+<li>bash</li>
+<li>dash</li>
+<li>sh</li>
+<li>ksh</li>
+<li>zsh</li>
+<li>csh</li>
+<li>powershell</li>
+</ul>
+</div>
+<div class="paragraph"><p>Current shell - <code>echo $0</code></p></div>
+<div class="paragraph"><p>Default shell - <code>echo $SHELL</code></p></div>
 </section>
 <section class="slide" id="_different_nixes">
 <h2>Different *nixes</h2>
@@ -159,7 +147,8 @@ Common directories<div class="ulist">
 <div class="paragraph"><p>This is not navigation, but you need to know this</p></div>
 <div class="ulist">
 <ul>
-<li><code>^n</code> reads as ctrl-n</li>
+<li><code>^n</code> or <code>^-n</code> reads as ctrl-n</li>
+<li>$ appended to the beginning of a word is a variable that can represent an option in that context</li>
 </ul>
 </div>
 </section>
@@ -168,8 +157,9 @@ Common directories<div class="ulist">
 <div class="paragraph"><p>Commands are often followed by one or more switches at the command line.
 When one <code>-</code> is used, each character following it is an option.
 When two '--' are used, the full string is considered the option.</p></div>
-<div class="paragraph"><p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options (e is invalid)</p></div>
+<div class="paragraph"><p><code>ls -help</code> attempts to run the <code>ls</code> command with the h,l,p options*</p></div>
 <div class="paragraph"><p><code>ls --help</code> prints the <code>ls</code> help file to the screen</p></div>
+<div class="paragraph"><p>(*<code>e</code> is invalid, but needed for the demo)</p></div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -301,6 +291,10 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
   <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><code>chmod 654 dirname</code></p></div></div></td>
   <td class="tableblock halign-left valign-top"><p class="tableblock">drw-r-xr--</p></td>
 </tr>
+<tr>
+  <td class="tableblock halign-left valign-top"><div><div class="paragraph"><p><code>chmod 722 filename</code></p></div></div></td>
+  <td class="tableblock halign-left valign-top"><p class="tableblock">-rw&#8212;&#8203;w&#8212;&#8203;w-</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -313,21 +307,13 @@ In some fonts, a <code>--</code> notation will appear as a single <code>-</code>
 </colgroup>
 <thead>
 <tr>
-  <th class="tableblock halign-left valign-top">Command</th>
-  <th class="tableblock halign-left valign-top">Function</th>
+  <th class="tableblock halign-left valign-top">* vi/vim
+  * emacs
+  * pico/nano</th>
+  <th class="tableblock halign-left valign-top">For editing files</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-  <td class="tableblock halign-left valign-top"><div><div class="ulist">
-  <ul>
-  <li>vi/vim</li>
-  <li>emacs</li>
-  <li>pico/nano</li>
-  </ul>
-  </div></div></td>
-  <td class="tableblock halign-left valign-top"><p class="tableblock">For editing files</p></td>
-</tr>
 <tr>
   <td class="tableblock halign-left valign-top"><p class="tableblock">cp</p></td>
   <td class="tableblock halign-left valign-top"><p class="tableblock">for copying files</p></td>
@@ -421,6 +407,8 @@ In the last year, How to exit the Vim editor has made up about .005% of question
 <div class="paragraph"><p><code>/texttosearch</code> - search for text in the document (case sensitive)</p></div>
 <div class="paragraph"><p><code>i</code> - insert mode to edit the file</p></div>
 <div class="paragraph"><p><code>esc</code> - return to command mode</p></div>
+<div class="paragraph"><p><code>:w</code> - write/save the file to disk</p></div>
+<div class="paragraph"><p><code>:q</code> - quit the editor if no changes were made or unsaved</p></div>
 <div class="paragraph"><p><code>:wq</code> - write/save the file and quit the editor</p></div>
 <div class="paragraph"><p><code>:q!</code> - quit the editor without saving the changes</p></div>
 </section>
@@ -450,12 +438,20 @@ In the last year, How to exit the Vim editor has made up about .005% of question
 </table>
 </div>
 </section>
+<section class="slide" id="_mkdir_command">
+<h2>mkdir command</h2>
+<div class="paragraph"><p><code>mkdir directoryname</code></p></div>
+<div class="paragraph"><p><code>mkdir -p path/to/new/direcctory</code></p></div>
+<div class="paragraph"><p><code>mkdir -v</code></p></div>
+<div class="paragraph"><p><code>mkdir -m=744 directory</code></p></div>
+<div class="paragraph"><p>creates directories to store files and directories</p></div>
+</section>
 <section class="slide" id="_rm_command">
 <h2>rm command</h2>
 <div class="paragraph"><p><code>rm filename</code></p></div>
-<div class="paragraph"><p>removes(deletes) the indicated file</p></div>
+<div class="paragraph"><p>removes (deletes) the indicated file</p></div>
 <div class="paragraph"><p><code>rm -rf directoryname</code></p></div>
-<div class="paragraph"><p>removes(deletes) the indicated directory and all of its contents, including hidden files</p></div>
+<div class="paragraph"><p>removes (deletes) the indicated directory and all of its contents, including hidden files</p></div>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -585,7 +581,7 @@ Many of these will likely be useful at some point to this audience.</p></div>
 <h2>Dangerous commands</h2>
 <div class="paragraph"><p>These commands should not be used unless you really understand what you&#8217;re doing with them.</p></div>
 <div class="paragraph"><p><code>rm -rf /</code> - Will delete the entire file system</p></div>
-<div class="paragraph"><p><code>mv file /dev/null</code> will move the file to a system device that will delete the file</p></div>
+<div class="paragraph"><p><code>mv file /dev/null</code> - will move the file to a system device that will delete the file</p></div>
 <div class="paragraph"><p><code>:(){:|:&amp;};:</code> - a fork bomb which creates a function and executes it until the system freezes</p></div>
 <div class="paragraph"><p><code>$COMMAND &gt; /dev/sda</code> - overwrites data on the block device, in this case the main drive</p></div>
 <div class="paragraph"><p><code>mkfs.ext4 /dev/sda</code> - formats the block device using the ext4 filesystem, in this case the main drive.
@@ -630,6 +626,7 @@ Similar files will exist for other shells.</p></div>
 <li>Vim Casts video tutorials by Drew Neil <a class="bare" href="http://vimcasts.org">http://vimcasts.org</a></li>
 <li>Command Line tutorial <a class="bare" href="http://linuxcommand.org/lc3_learning_the_shell.php">http://linuxcommand.org/lc3_learning_the_shell.php</a></li>
 <li>Command Line Magic <a class="bare" href="https://twitter.com/climagic">https://twitter.com/climagic</a></li>
+<li>Julia Evans <a class="bare" href="https://twitter.com/b0rk">https://twitter.com/b0rk</a> <a class="bare" href="https://wizardzines.com">https://wizardzines.com</a></li>
 <li>Explains the entered command based on the man page <a class="bare" href="http://explainshell.com">http://explainshell.com</a></li>
 <li>Test your regex expressions <a class="bare" href="http://regex101.com">http://regex101.com</a></li>
 <li>Practice your knowledge of regex <a class="bare" href="http://regexcrossword.com">http://regexcrossword.com</a></li>
@@ -649,7 +646,7 @@ Similar files will exist for other shells.</p></div>
 </thead>
 <tbody>
 <tr>
-  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://tinyurl.com/y9gqhswj">https://tinyurl.com/y9gqhswj</a></p></td>
+  <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://tinyurl.com/uk3nsd9">https://tinyurl.com/uk3nsd9</a></p></td>
   <td class="tableblock halign-center valign-top"><p class="tableblock"><a class="bare" href="https://gitlab.com/chuckf/cli_basics">https://gitlab.com/chuckf/cli_basics</a></p></td>
 </tr>
 <tr>
