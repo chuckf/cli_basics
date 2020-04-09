@@ -315,7 +315,7 @@ moves the file from the current location/name to the new location/name.
 
 `mkdir directoryname`
 
-`mkdir -p path/to/new/direcctory`
+`mkdir -p path/to/new/directory`
 
 `mkdir -v`
 
